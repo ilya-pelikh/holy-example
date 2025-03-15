@@ -3,7 +3,7 @@ const path = require('path');
 const morgan = require('morgan');
 
 const app = express();
-const port = 5000;
+const port = 4000;
 
 app.use(morgan('combined'));
 app.use(express.json());
