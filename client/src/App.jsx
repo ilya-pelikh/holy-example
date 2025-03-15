@@ -10,8 +10,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Code />} />
-        <Route path="/code" element={<Intro />} />
+        <Route path="/" element={<Intro />} />
+        <Route path="/code" element={<Code />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
