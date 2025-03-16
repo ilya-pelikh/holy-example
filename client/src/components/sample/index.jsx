@@ -4,7 +4,7 @@ import CodeMirror from '@uiw/react-codemirror';
 import { createTheme } from '@uiw/codemirror-themes';
 import { javascript } from '@codemirror/lang-javascript';
 
-import './index.css';
+import { SampleStyled, StyledSampleOnboarding } from './sample.styled.js'
 
 const customTheme = createTheme({
     theme: 'dark',
@@ -38,24 +38,28 @@ const customTheme = createTheme({
     ],
 });
 
-function Sample() {
+const Sample = ({ onboardingStep }) => {
     const [value, setValue] = React.useState("console.log('hello world!');");
 
     const onChange = React.useCallback((val, viewUpdate) => {
-        console.log('val:', val);
         setValue(val);
     }, []);
 
     return (
-        <div id='sample'>
-            <CodeMirror
-                value={value}
-                height="60vh"
-                theme={customTheme}
-                onChange={onChange}
-                extensions={[javascript({ jsx: true })]}
-            />
-        </div>
+        <>
+            <SampleStyled onboardingStep={onboardingStep}>
+                <CodeMirror
+                    value={value}
+                    height="60vh"
+                    theme={customTheme}
+                    onChange={onChange}
+                    extensions={[javascript({ jsx: true })]}
+                />
+            </SampleStyled>
+            <StyledSampleOnboarding onboardingStep={onboardingStep}>
+                Ты получил доступ к коду приложения на сервере. Восстанови код модуля injection, который привел к такому результату
+            </StyledSampleOnboarding>
+        </>
     )
 }
 

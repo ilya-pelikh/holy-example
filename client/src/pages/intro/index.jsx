@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './intro.css'
 import title from '../../assest/title.png'
-import TextDialog from '../components/textDialog';
+import TextDialog from '../../components/textDialog';
 import { useNavigate } from 'react-router-dom'
     ;
 function Intro() {

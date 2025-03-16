@@ -1,21 +1,23 @@
 import React from 'react';
 
-import './index.css';
+import { StepStyled, StepsStyled, StyledStepsOnboarding } from './steps.styled'
 
-const Steps = () => {
-
+const Steps = ({ onboardingStep }) => {
     return (
-        <div id='steps'>
-            <div class='step'>[ Получение звонка ]</div>
-            <div class='step'>----</div>
-            <div class='step'>[ Подозрение ]</div>
-            <div class='step'>----</div>
-            <div class='step'>[ Проверка ]</div>
-            <div class='step'>----</div>
-            <div class='step'>[ Блокировка ]</div>
-            <div class='step'>----</div>
-            <div class='step'>[ Защита завершена ]</div>
-        </div>
+        <StepsStyled onboardingStep={onboardingStep}>
+            <StepStyled >[ Получение звонка ]</StepStyled>
+            <StepStyled>----</StepStyled>
+            <StepStyled>[ Подозрение ]</StepStyled>
+            <StepStyled>----</StepStyled>
+            <StepStyled>[ Проверка ]</StepStyled>
+            <StepStyled>----</StepStyled>
+            <StepStyled>[ Блокировка ]</StepStyled>
+            <StepStyled>----</StepStyled>
+            <StepStyled>[ Защита завершена ]</StepStyled>
+            <StyledStepsOnboarding onboardingStep={onboardingStep}>
+                Помешай мошенникам взломать бабушку
+            </StyledStepsOnboarding>
+        </StepsStyled>
     );
 }
 

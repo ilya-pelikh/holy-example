@@ -4,7 +4,7 @@ import CodeMirror from '@uiw/react-codemirror';
 import { createTheme } from '@uiw/codemirror-themes';
 import { javascript } from '@codemirror/lang-javascript';
 
-import './index.css';
+import { EditorStyled } from './editor.styled';
 
 const customTheme = createTheme({
     theme: 'dark',
@@ -42,12 +42,11 @@ function Editor() {
     const [value, setValue] = React.useState("console.log('hello world!');");
 
     const onChange = React.useCallback((val, viewUpdate) => {
-        console.log('val:', val);
         setValue(val);
     }, []);
 
     return (
-        <div id='editor'>
+        <EditorStyled>
             <CodeMirror
                 value={value}
                 height="60vh"
@@ -55,7 +54,7 @@ function Editor() {
                 onChange={onChange}
                 extensions={[javascript({ jsx: true })]}
             />
-        </div>
+        </EditorStyled>
     )
 }
 

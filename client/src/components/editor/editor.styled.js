@@ -1,8 +1,10 @@
-#editor {
+import styled from "styled-components";
+
+export const EditorStyled = styled.div`
     width: 40vw;
     height: 60vh;
 
     font-family: 'Monaco', arial;
 
     border: 2px solid #56FF71;
-}
+`

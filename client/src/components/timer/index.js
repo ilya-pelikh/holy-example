@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
-import './index.css';
+import { StyledTimer, StyledTimerContainer, StyledTimerOnboarding } from './timer.styled'
 
-const Timer = () => {
+const Timer = ({ onboardingStep }) => {
     // 10 minutes in seconds
     const [timeInSeconds, setTimeInSeconds] = useState(600);
 
     useEffect(() => {
+        if (onboardingStep !== 0) return;
+
         // Stop the timer when it reaches 0
         if (timeInSeconds <= 0) return;
 
@@ -24,7 +26,14 @@ const Timer = () => {
     const seconds = timeInSeconds % 60;
 
     return (
-        <div id='timer'>{String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}</div>
+        <StyledTimerContainer onboardingStep={onboardingStep}>
+            <StyledTimer>
+                {String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}
+            </StyledTimer>
+            <StyledTimerOnboarding onboardingStep={onboardingStep}>
+                Но у тебя мало времени
+            </StyledTimerOnboarding>
+        </StyledTimerContainer>
     );
 }
 
