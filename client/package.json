@@ -13,6 +13,7 @@
     "@lezer/highlight": "1.2.1",
     "@uiw/codemirror-themes": "4.23.10",
     "@uiw/react-codemirror": "4.23.10",
+    "ajv": "^8.17.1",
     "codemirror": "6.0.1",
     "http-proxy-middleware": "3.0.3",
     "react": "19.0.0",
