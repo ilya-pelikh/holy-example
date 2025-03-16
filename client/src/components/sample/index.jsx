@@ -47,6 +47,7 @@ const Sample = ({ onboardingStep }) => {
 
     return (
         <>
+            { /* Поле для кода */}
             <SampleStyled onboardingStep={onboardingStep}>
                 <CodeMirror
                     value={value}
@@ -56,8 +57,10 @@ const Sample = ({ onboardingStep }) => {
                     extensions={[javascript({ jsx: true })]}
                 />
             </SampleStyled>
+
+            { /* Онбординг */}
             <StyledSampleOnboarding onboardingStep={onboardingStep}>
-                Ты получил доступ к коду приложения на сервере. Восстанови код модуля injection, который привел к такому результату
+                Мы смогли получить доступ к коду приложения на сервере
             </StyledSampleOnboarding>
         </>
     )

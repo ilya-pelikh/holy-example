@@ -39,6 +39,7 @@
     transform: translateX(-50%);
     animation: shine 3s infinite linear;
     font-size: 50px;
+    cursor: pointer;
 }
 
 /* Подсветка при наведении */

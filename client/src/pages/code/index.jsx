@@ -1,20 +1,31 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'
 
 import Timer from '../../components/timer'
 import Steps from '../../components/steps'
 import Editor from '../../components/editor'
 import Sample from '../../components/sample'
-import { ReactComponent as ExitIcon } from '../../assest/exit.svg';
+import CheckButton from '../../components/checkButton'
 
-import './index.css';
+import {
+    StyledBody,
+    StyledFooter,
+    StyledHeader,
+    StyledOverlay,
+    StyledExitIcon,
+    StyledFullScreen,
+    StyledExitButton,
+} from './code.styled.js'
 
 const Code = () => {
+    const navigate = useNavigate();
     const [onboardingStep, setOnboardingStep] = useState(1);
 
     useEffect(() => {
         const handleClick = (event) => {
-            setOnboardingStep(onboardingStep + 1)
-            // Ваша логика обработки клика
+            if (onboardingStep < 6) {
+                setOnboardingStep(onboardingStep + 1)
+            }
         };
 
         // Добавляем слушатель события на window
@@ -26,27 +37,36 @@ const Code = () => {
         };
     }, [onboardingStep]);
 
+    const onClickExitButton = () => {
+        // Переходим в начало
+        navigate('/');
+    };
+
     return (
-        <div id='full-screen'>
+        <StyledFullScreen>
             { /* Затемнение экрана для онбординга */}
-            {onboardingStep && <div id="overlay" />}
+            {onboardingStep < 6 ? <StyledOverlay /> : <div></div>}
 
             { /* Заголовок */}
-            <div id='header'>
+            <StyledHeader>
                 <Timer onboardingStep={onboardingStep} />
                 <Steps onboardingStep={onboardingStep} />
-                <div id='exit-container'><ExitIcon fill='#36FFFF' id='exit' /></div>
-            </div>
-            <div id="body">
+                <StyledExitButton onClick={onClickExitButton}>
+                    <StyledExitIcon fill='#36FFFF' />
+                </StyledExitButton>
+            </StyledHeader>
+
+            { /* Поля для кода */}
+            <StyledBody>
                 <Sample onboardingStep={onboardingStep} />
-                <Editor />
-            </div>
-            <div id="footer">
-                <div id='check-code'>
-                    <div id='check-code-text'>Подобрать код</div>
-                </div>
-            </div>
-        </div>
+                <Editor onboardingStep={onboardingStep} />
+            </StyledBody>
+
+            { /* Кнопка проверки кода */}
+            <StyledFooter>
+                <CheckButton onboardingStep={onboardingStep} />
+            </StyledFooter>
+        </StyledFullScreen>
     );
 }
 

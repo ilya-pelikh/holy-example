@@ -4,7 +4,7 @@ import CodeMirror from '@uiw/react-codemirror';
 import { createTheme } from '@uiw/codemirror-themes';
 import { javascript } from '@codemirror/lang-javascript';
 
-import { EditorStyled } from './editor.styled';
+import { EditorStyled, StyledEditorOnboarding } from './editor.styled';
 
 const customTheme = createTheme({
     theme: 'dark',
@@ -38,7 +38,7 @@ const customTheme = createTheme({
     ],
 });
 
-function Editor() {
+const Editor = ({ onboardingStep }) => {
     const [value, setValue] = React.useState("console.log('hello world!');");
 
     const onChange = React.useCallback((val, viewUpdate) => {
@@ -46,15 +46,23 @@ function Editor() {
     }, []);
 
     return (
-        <EditorStyled>
-            <CodeMirror
-                value={value}
-                height="60vh"
-                theme={customTheme}
-                onChange={onChange}
-                extensions={[javascript({ jsx: true })]}
-            />
-        </EditorStyled>
+        <>
+            { /* Поле для кода */}
+            <EditorStyled onboardingStep={onboardingStep}>
+                <CodeMirror
+                    value={value}
+                    height="60vh"
+                    theme={customTheme}
+                    onChange={onChange}
+                    extensions={[javascript({ jsx: true })]}
+                />
+            </EditorStyled>
+
+            { /* Онбординг */}
+            <StyledEditorOnboarding onboardingStep={onboardingStep}>
+                В этом окне необходимо воспроизвести первоначальный код для получения соответствующего результата
+            </StyledEditorOnboarding>
+        </>
     )
 }
 

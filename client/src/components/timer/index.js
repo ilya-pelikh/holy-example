@@ -7,7 +7,7 @@ const Timer = ({ onboardingStep }) => {
     const [timeInSeconds, setTimeInSeconds] = useState(600);
 
     useEffect(() => {
-        if (onboardingStep !== 0) return;
+        if (onboardingStep < 6) return;
 
         // Stop the timer when it reaches 0
         if (timeInSeconds <= 0) return;
@@ -19,7 +19,7 @@ const Timer = ({ onboardingStep }) => {
 
         // Clean up the interval when the component unmounts or the timer reaches 0
         return () => clearInterval(timerInterval);
-    }, [timeInSeconds]);
+    }, [timeInSeconds, onboardingStep]);
 
     // Convert seconds into minutes and seconds
     const minutes = Math.floor(timeInSeconds / 60);
@@ -27,9 +27,12 @@ const Timer = ({ onboardingStep }) => {
 
     return (
         <StyledTimerContainer onboardingStep={onboardingStep}>
+            { /* Таймер */}
             <StyledTimer>
                 {String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}
             </StyledTimer>
+
+            { /* Онбординг */}
             <StyledTimerOnboarding onboardingStep={onboardingStep}>
                 Но у тебя мало времени
             </StyledTimerOnboarding>
