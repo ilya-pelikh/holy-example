@@ -1,6 +1,9 @@
 {
   "dependencies": {
+    "axios": "^1.8.3",
     "express": "^4.21.2",
+    "isolated-vm": "^5.0.4",
+    "json-stringify-safe": "^5.0.1",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
