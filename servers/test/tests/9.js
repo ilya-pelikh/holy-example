@@ -1,0 +1,40 @@
+// Преобразование временной метки
+// const solution = (data) => {
+//   const date = new Date(data);
+//   return {
+//     year: date.getFullYear(),
+//     month: date.getMonth() + 1,
+//     day: date.getDate(),
+//     hours: date.getHours(),
+//     minutes: date.getMinutes(),
+//     seconds: date.getSeconds()
+//   };
+// };
+
+const compare = (data1, data2) => {
+  if (typeof data1 !== 'object' || typeof data2 !== 'object') return false;
+
+  const keys = ['year', 'month', 'day', 'hours', 'minutes', 'seconds'];
+
+  return keys.every(key => data1[key] === data2[key]);
+};
+
+function test() {
+  const data1 = 1634567890000; // 2021-10-18 13:44:50
+  const data2 = 1609459200000; // 2021-01-01 00:00:00
+  const data3 = 1577836800000; // 2020-01-01 00:00:00
+
+  const result1 = injection(data1);
+  const result2 = injection(data2);
+  const result3 = injection(data3);
+
+  const expected1 = { year: 2021, month: 10, day: 18, hours: 13, minutes: 44, seconds: 50 };
+  const expected2 = { year: 2021, month: 1, day: 1, hours: 0, minutes: 0, seconds: 0 };
+  const expected3 = { year: 2020, month: 1, day: 1, hours: 0, minutes: 0, seconds: 0 };
+
+  return compare(result1, expected1)
+    && compare(result2, expected2)
+    && compare(result3, expected3);
+}
+
+test();

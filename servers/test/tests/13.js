@@ -1,0 +1,63 @@
+// Сортировка массива объектов
+// const solution = (data) => {
+//   return [...data].sort((a, b) => b.score - a.score);
+// };
+
+const compare = (data1, data2) => {
+  if (!Array.isArray(data1) || !Array.isArray(data2)) return false;
+  if (data1.length !== data2.length) return false;
+
+  return data1.every((item, index) => {
+    return item.name === data2[index].name && item.score === data2[index].score;
+  });
+};
+
+function test() {
+  const data1 = [
+    { name: "John", score: 85 },
+    { name: "Jane", score: 92 },
+    { name: "Bob", score: 78 }
+  ];
+
+  const data2 = [
+    { name: "Alice", score: 65 },
+    { name: "Mike", score: 90 },
+    { name: "Sarah", score: 82 },
+    { name: "Tom", score: 88 }
+  ];
+
+  const data3 = [
+    { name: "Kate", score: 75 },
+    { name: "David", score: 75 },
+    { name: "Alex", score: 75 }
+  ];
+
+  const result1 = injection(data1);
+  const result2 = injection(data2);
+  const result3 = injection(data3);
+
+  const expected1 = [
+    { name: "Jane", score: 92 },
+    { name: "John", score: 85 },
+    { name: "Bob", score: 78 }
+  ];
+
+  const expected2 = [
+    { name: "Mike", score: 90 },
+    { name: "Tom", score: 88 },
+    { name: "Sarah", score: 82 },
+    { name: "Alice", score: 65 }
+  ];
+
+  const expected3 = [
+    { name: "Kate", score: 75 },
+    { name: "David", score: 75 },
+    { name: "Alex", score: 75 }
+  ];
+
+  return compare(result1, expected1)
+    && compare(result2, expected2)
+    && compare(result3, expected3);
+}
+
+test();
