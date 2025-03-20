@@ -1,10 +1,26 @@
 // Подсчет частоты символов
-// const solution = (data) => {
+// function injection(data) {
 //   return data.split('').reduce((acc, char) => {
 //     acc[char] = (acc[char] || 0) + 1;
 //     return acc;
 //   }, {});
 // };
+function testAll(compareArray, compareFn) {
+  let wrongTestIndex = null;
+  compareArray.forEach((test, index) => {
+    if (!compareFn(test.result, test.expected)) {
+      wrongTestIndex = index;
+    }
+  });
+  const resultObject = {
+    result: wrongTestIndex === null,
+  };
+  if (wrongTestIndex !== null) {
+    resultObject.expected = compareArray[wrongTestIndex].expected;
+    resultObject.received = compareArray[wrongTestIndex].result;
+  }
+  return JSON.stringify(resultObject);
+}
 
 const compare = (data1, data2) => {
   if (typeof data1 !== 'object' || typeof data2 !== 'object') return false;
@@ -32,9 +48,11 @@ function test() {
   const expected2 = { j: 1, a: 2, v: 1, s: 1, c: 1, r: 1, i: 1, p: 1, t: 1 };
   const expected3 = { a: 3, " ": 2, b: 3, c: 3 };
 
-  return compare(result1, expected1)
-    && compare(result2, expected2)
-    && compare(result3, expected3);
+  return testAll([
+    { result: result1, expected: expected1 },
+    { result: result2, expected: expected2 },
+    { result: result3, expected: expected3 },
+  ], compare);
 }
 
 test();

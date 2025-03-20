@@ -1,5 +1,5 @@
 // Группировка по длине
-// const solution = (data) => {
+// function injection(data) {
 //   return data.reduce((acc, word) => {
 //     const length = word.length;
 //     acc[length] = acc[length] || [];
@@ -7,6 +7,22 @@
 //     return acc;
 //   }, {});
 // };
+function testAll(compareArray, compareFn) {
+  let wrongTestIndex = null;
+  compareArray.forEach((test, index) => {
+    if (!compareFn(test.result, test.expected)) {
+      wrongTestIndex = index;
+    }
+  });
+  const resultObject = {
+    result: wrongTestIndex === null,
+  };
+  if (wrongTestIndex !== null) {
+    resultObject.expected = compareArray[wrongTestIndex].expected;
+    resultObject.received = compareArray[wrongTestIndex].result;
+  }
+  return JSON.stringify(resultObject);
+}
 
 const compare = (data1, data2) => {
   if (typeof data1 !== 'object' || typeof data2 !== 'object') return false;
@@ -41,9 +57,11 @@ function test() {
   const expected2 = { 2: ["js"], 3: ["css", "vue"], 4: ["html"], 5: ["react"], 7: ["angular"] };
   const expected3 = { 3: ["one", "two"], 4: ["four", "five"], 5: ["three"] };
 
-  return compare(result1, expected1)
-    && compare(result2, expected2)
-    && compare(result3, expected3);
+  return testAll([
+    { result: result1, expected: expected1 },
+    { result: result2, expected: expected2 },
+    { result: result3, expected: expected3 },
+  ], compare);
 }
 
 test();
