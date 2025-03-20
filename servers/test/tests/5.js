@@ -1,7 +1,23 @@
 // Палиндромный фильтр
-// const solution = (data) => {
+// function injection(data) {
 //   return data.filter(word => word === word.split('').reverse().join(''));
 // };
+function testAll(compareArray, compareFn) {
+  let wrongTestIndex = null;
+  compareArray.forEach((test, index) => {
+    if (!compareFn(test.result, test.expected)) {
+      wrongTestIndex = index;
+    }
+  });
+  const resultObject = {
+    result: wrongTestIndex === null,
+  };
+  if (wrongTestIndex !== null) {
+    resultObject.expected = compareArray[wrongTestIndex].expected;
+    resultObject.received = compareArray[wrongTestIndex].result;
+  }
+  return JSON.stringify(resultObject);
+}
 
 const compare = (data1, data2) => {
   if (Array.isArray(data1) && Array.isArray(data2)) {
@@ -24,9 +40,11 @@ function test() {
   const expected2 = ["noon", "deed"];
   const expected3 = ["a", "aba", "abba", "abcba"];
 
-  return compare(result1, expected1)
-    && compare(result2, expected2)
-    && compare(result3, expected3);
+  return testAll([
+    { result: result1, expected: expected1 },
+    { result: result2, expected: expected2 },
+    { result: result3, expected: expected3 },
+  ], compare);
 }
 
 test();

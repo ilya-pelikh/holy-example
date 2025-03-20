@@ -1,7 +1,24 @@
 // Подсчет слов в строке
-// const solution = (data) => {
+// function injection(data) {
 //   return data.split(/\s+/).filter(word => word.length > 0).length;
 // };
+
+function testAll(compareArray, compareFn) {
+  let wrongTestIndex = null;
+  compareArray.forEach((test, index) => {
+    if (!compareFn(test.result, test.expected)) {
+      wrongTestIndex = index;
+    }
+  });
+  const resultObject = {
+    result: wrongTestIndex === null,
+  };
+  if (wrongTestIndex !== null) {
+    resultObject.expected = compareArray[wrongTestIndex].expected;
+    resultObject.received = compareArray[wrongTestIndex].result;
+  }
+  return JSON.stringify(resultObject);
+}
 
 const compare = (data1, data2) => {
   return data1 === data2;
@@ -26,11 +43,13 @@ function test() {
   const expected4 = 1;
   const expected5 = 0;
 
-  return compare(result1, expected1)
-    && compare(result2, expected2)
-    && compare(result3, expected3)
-    && compare(result4, expected4)
-    && compare(result5, expected5);
+  return testAll([
+    { result: result1, expected: expected1 },
+    { result: result2, expected: expected2 },
+    { result: result3, expected: expected3 },
+    { result: result4, expected: expected4 },
+    { result: result5, expected: expected5 },
+  ], compare);
 }
 
 test();

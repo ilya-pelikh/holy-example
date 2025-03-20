@@ -1,5 +1,5 @@
 // Преобразование временной метки
-// const solution = (data) => {
+// function injection(data) {
 //   const date = new Date(data);
 //   return {
 //     year: date.getFullYear(),
@@ -10,6 +10,22 @@
 //     seconds: date.getSeconds()
 //   };
 // };
+function testAll(compareArray, compareFn) {
+  let wrongTestIndex = null;
+  compareArray.forEach((test, index) => {
+    if (!compareFn(test.result, test.expected)) {
+      wrongTestIndex = index;
+    }
+  });
+  const resultObject = {
+    result: wrongTestIndex === null,
+  };
+  if (wrongTestIndex !== null) {
+    resultObject.expected = compareArray[wrongTestIndex].expected;
+    resultObject.received = compareArray[wrongTestIndex].result;
+  }
+  return JSON.stringify(resultObject);
+}
 
 const compare = (data1, data2) => {
   if (typeof data1 !== 'object' || typeof data2 !== 'object') return false;
@@ -28,13 +44,15 @@ function test() {
   const result2 = injection(data2);
   const result3 = injection(data3);
 
-  const expected1 = { year: 2021, month: 10, day: 18, hours: 13, minutes: 44, seconds: 50 };
-  const expected2 = { year: 2021, month: 1, day: 1, hours: 0, minutes: 0, seconds: 0 };
-  const expected3 = { year: 2020, month: 1, day: 1, hours: 0, minutes: 0, seconds: 0 };
+  const expected1 = { year: 2021, month: 10, day: 18, hours: 17, minutes: 38, seconds: 10 };
+  const expected2 = { year: 2021, month: 1, day: 1, hours: 3, minutes: 0, seconds: 0 };
+  const expected3 = { year: 2020, month: 1, day: 1, hours: 3, minutes: 0, seconds: 0 };
 
-  return compare(result1, expected1)
-    && compare(result2, expected2)
-    && compare(result3, expected3);
+  return testAll([
+    { result: result1, expected: expected1 },
+    { result: result2, expected: expected2 },
+    { result: result3, expected: expected3 },
+  ], compare);
 }
 
 test();

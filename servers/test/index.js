@@ -14,7 +14,7 @@ const port = 3001;
 app.use(express.json());
 const logger = createLogger('test');
 
-const ACCEPTED_IDS = ['1'];
+const ACCEPTED_IDS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'];
 
 app.post('*', async (req, res) => {
   logger({ id: 1, req: req.body, headers: req.headers });
@@ -44,12 +44,12 @@ app.post('*', async (req, res) => {
     // Выполняем код в изолированном контексте с ограничением времени
     const code = req.body.code + file;
 
-    const result = await context.eval(code, { timeout: RUNTIME_TIMEOUT });
-
-    logger({ id: 4, status: 200, result });
+    const response = await context.eval(code, { timeout: RUNTIME_TIMEOUT });
+    const parsed = JSON.parse(response);
+    logger({ id: 4, status: 200, result: parsed });
 
     // Возвращаем результат
-    res.status(200).json({ result }).send();
+    res.status(200).json({ result: parsed.result }).send();
   } catch (error) {
     // Обрабатываем ошибки
     logger({ id: 5, status: 400, message: error.message });
