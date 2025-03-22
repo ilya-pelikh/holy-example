@@ -3,7 +3,10 @@ const path = require('path');
 const cors = require('cors');
 const express = require('express');
 const { Isolate } = require('isolated-vm');
+
 const { createLogger } = require('../utils/logger');
+
+const { errors, infoMessages } = require('./constants')
 
 const MEMORY_LIMIT = 64;
 const RUNTIME_TIMEOUT = 5000;
@@ -18,28 +21,8 @@ const logger = createLogger('test');
 
 const ACCEPTED_IDS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'];
 
-// const injection = (prop) => {
-//   prop.map(el => el + 1);
-//   return prop;
-// }
-
-
-app.post('*', async (req, res) => {
-  logger({ id: 1, req: req.body, headers: req.headers });
-
-  const hasToken = req.headers['accept-token'] === ACCEPT_TOKEN;
-  const hasAcceptedTestId = ACCEPTED_IDS.includes(req.body.id.toString());
-
-  if (!hasToken || !hasAcceptedTestId) {
-    logger({ id: 2, status: 403 });
-    return res.status(403).send();
-  }
-
-  const file = fs.readFileSync(path.resolve(__dirname, `./tests/${req.body.id}.js`), 'utf8');
-
-  logger({ id: 3, file: `./tests/${req.body.id}.js` });
-
-  try {
+// Выполнение теста с добавленным кодом решения пользлвателя с возвратом результата
+const testUserSolution = async (reqBodyCode, testFile) => {
     // Создаем изолированный контекст с ограничением памяти
     const isolate = new Isolate({ memoryLimit: MEMORY_LIMIT }); // Ограничение памяти до 64 MB
     const context = await isolate.createContext();
@@ -50,22 +33,52 @@ app.post('*', async (req, res) => {
     // Устанавливаем глобальные переменные (опционально)
     await jail.set('global', jail.derefInto());
     // Выполняем код в изолированном контексте с ограничением времени
-    const code = req.body.code + '\n\n' + file;
+    const code = reqBodyCode + '\n\n' + testFile;
 
     const response = await context.eval(code, { timeout: RUNTIME_TIMEOUT });
     const parsed = JSON.parse(response);
-    logger({ id: 4, status: 200, result: parsed });
 
-    // Возвращаем результат
-    res.status(200).json({ result: parsed.result }).send();
-  } catch (error) {
-    // Обрабатываем ошибки
-    logger({ id: 5, status: 400, message: error.message });
+    return parsed
+}
 
-    res.status(400).json({ error: error.message }).send();
-  }
+// 
+app.post('*', async (req, res) => {
+    try {
+        logger({ id: 'TI1', description: infoMessages.TI1(), req: req.body });
+
+        // Запрос не прошёл проверку по токену
+        if (req.headers['accept-token'] !== ACCEPT_TOKEN) {
+            throw new Error('TE1')
+        }
+
+        // Переданный id задания не входит в диапазон от 1 до 15
+        if (!ACCEPTED_IDS.includes(req.body.id.toString())) {
+            throw 'TE2'
+        }
+
+        const file = fs.readFileSync(path.resolve(__dirname, `./tests/${req.body.id}.js`), 'utf8');
+        const comparisonResult = await testUserSolution(req.body.code, file)
+
+        // Возвращаем результат
+        logger({ id: 'TI2', description: infoMessages.TI2(), result: comparisonResult, status: 200 });
+        res.status(200).json({ result: comparisonResult }).send();
+    } catch (error) {
+        switch (error) {
+            case 'TE1':
+                logger({ id: 'TE1', description: errors.TE1(), status: 403 });
+                res.status(403).json({ error: 'Ошибка № TE1 - обратитесь к сопровождающему стенда' }).send();
+                break;
+            case 'TE2':
+                logger({ id: 'TE2', description: errors.TE2(req.body.id.toString()), status: 400 });
+                res.status(400).json({ error: 'Ошибка № TE2 - обратитесь к сопровождающему стенда' }).send();
+                break;
+            default:
+                logger({ id: 'TE3', description: errors.TE3(), catchedError: error, status: 400 });
+                res.status(400).json({ error: `Ошибка № TE3 - обратитесь к сопровождающему стенда` }).send();
+        }
+    }
 });
 
 app.listen(port, () => {
-  console.log(`Test server: ${port}`);
+    console.log(`Test server: ${port}`);
 });

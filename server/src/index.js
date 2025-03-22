@@ -1,22 +1,23 @@
+// Безопасно управляем процессами main и test
 const { spawn } = require('child_process');
 
 const subProcesses = [];
 
 const onMainProcessClose = () => {
-  subProcesses.forEach(subProcess => {
-    const { pid } = subProcess;
-    process.kill(pid);
-  });
+    subProcesses.forEach(subProcess => {
+        const { pid } = subProcess;
+        process.kill(pid);
+    });
 };
 
 const onChildProcessClose = () => {
-  subProcesses.forEach(subProcess => {
-    subProcess.on('close', code => {
-      if (code) {
-        process.exit();
-      }
+    subProcesses.forEach(subProcess => {
+        subProcess.on('close', code => {
+            if (code) {
+                process.exit();
+            }
+        });
     });
-  });
 };
 
 const mainProcess = spawn('node', ['src/main'], { stdio: 'inherit' });

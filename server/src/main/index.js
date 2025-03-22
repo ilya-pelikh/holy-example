@@ -5,6 +5,8 @@ const express = require('express');
 
 const { createLogger } = require('../utils/logger');
 
+const { errors, infoMessages } = require('./constants')
+
 const port = 3000;
 const ACCEPT_TOKEN = 'secret_token';
 
@@ -16,43 +18,37 @@ app.use(morgan('combined'));
 app.use(express.json());
 
 app.post('/tasks/:id', async (req, res) => {
-  logger({ id: 1, body: req.body, params: req.params });
+    logger({ id: 'MI1', description: infoMessages.MI1(), requestBody: req.body });
 
-  if (!req.body?.code) return;
+    try {
+        if (!req.body?.code) {
+            throw 'ME1'
+        }
 
-  try {
-    const postData = [
-      'http://localhost:3001/',
-      { code: req.body.code, id: req.params.id },
-      { headers: { 'Accept-Token': ACCEPT_TOKEN } },
-    ];
+        const postData = [
+            'http://localhost:3001/',
+            { code: req.body.code, id: req.params.id },
+            { headers: { 'Accept-Token': ACCEPT_TOKEN } },
+        ];
+        const { data: { result } } = await axios.post(...postData);
+        logger({ id: 'MI2', description: infoMessages.TI2, result });
 
-    logger({ id: 2, postData });
-
-    const {
-      data: { result },
-    } = await axios.post(...postData);
-
-    logger({ id: 3, result });
-
-    if (result) {
-      const taskId = Number(req.params.id);
-      const header = ['Location', `http://localhost:3000/tasks/${taskId + 1}`];
-      res.setHeader(...header);
-      logger({ id: 4, header });
+        if (result) {
+            res.status(200).send('Этап успешно завершён');
+        } else {
+            logger({ id: 'ME2', description: errors.ME2(), status: 200 });
+            res.status(200).send('Попытка не удалась, попробуйте еще раз');
+        }
+    } catch (error) {
+        switch (error) {
+            case 'ME1':
+                logger({ id: 'ME1', description: errors.ME1(), status: 400 });
+                res.status(400).json({ error: 'Ошибка № ME2 - обратитесь к сопровождающему стенда' }).send();
+                break;
+        }
     }
-
-    logger({ id: 5, status: 301 });
-    res.status(301).send();
-  } catch (err) {
-    logger({ id: 6, status: 400, err: err.response.data });
-
-    console.log(err);
-
-    res.status(400).send('Неправильно');
-  }
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+    console.log(`Example app listening on port ${port}`);
 });
