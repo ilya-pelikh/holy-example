@@ -24,7 +24,6 @@ const Code = () => {
     // Код модуля injection, который вернет ожидаемый результат
 }
 `);
-
     const [saveStep, setSaveStep] = useState(1);
     const [onboardingStep, setOnboardingStep] = useState(1);
 

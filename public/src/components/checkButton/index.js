@@ -19,7 +19,7 @@ const Timer = ({ taskIndex, enteredCode, onboardingStep }) => {
             code: enteredCode,
         }
     }).then(res => {
-        console.log(2, res.data);
+        console.log(2, res);
     });
 
     return (

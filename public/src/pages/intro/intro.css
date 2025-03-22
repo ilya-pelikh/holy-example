@@ -1,0 +1,121 @@
+.background {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(1, 11, 2, 1);
+}
+
+.title {
+    margin-top: 6%;
+    max-width: 65%;
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.helpButton {
+    width: 350px;
+    height: 100px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: rgba(250, 247, 76, 1);
+    font-family: 'Minecraftia';
+    background: linear-gradient(120deg,
+            rgba(144, 238, 144, 0) 30%,
+            /* Прозрачный светло-зеленый */
+            rgba(144, 238, 144, 0.8) 50%,
+            /* Светло-зеленый с прозрачностью */
+            rgba(144, 238, 144, 0) 70%
+            /* Прозрачный светло-зеленый */
+        );
+    background-size: 200% auto;
+    border: 2px solid rgba(86, 255, 113, 1);
+    position: fixed;
+    bottom: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: shine 3s infinite linear;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+/* Подсветка при наведении */
+.helpButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(144, 238, 144, 0.3);
+    /* Светло-зеленая подсветка */
+    border-radius: 5px;
+    z-index: -1;
+    /* Размещаем за кнопкой */
+    opacity: 0;
+    /* Начальная прозрачность */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.helpButton:hover {
+    box-shadow: 0 0 20px 5px rgba(255, 223, 186, 0.6);
+    /* Теплая рассеянная подсветка */
+}
+
+/* Стили для кнопки */
+.interveneButton {
+    width: 350px;
+    height: 55px;
+    color: rgba(250, 247, 76, 1);
+    background-color: rgba(8, 43, 11, 1);
+    font-family: 'Minecraftia';
+    border: 2px solid rgba(86, 255, 113, 1);
+    position: fixed;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 22px;
+    cursor: pointer;
+    outline: none;
+    opacity: 0;
+    animation: fade-in-interveneButton 0.5s ease 17.5s forwards;
+}
+
+.interveneButton:hover {
+    box-shadow: 0 0 20px 5px rgba(255, 223, 186, 0.4);
+    /* Теплая рассеянная подсветка */
+}
+
+/* Анимация появления кнопки */
+@keyframes fade-in-interveneButton {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes shine {
+    0% {
+        background-position: -200%;
+        /* Начинаем за пределами кнопки */
+    }
+
+    100% {
+        background-position: 200%;
+        /* Заканчиваем за пределами кнопки */
+    }
+}
+
+.containerDialog {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}

@@ -1,0 +1,41 @@
+<svg id="svg" fill="36FFFF" stroke="36FFFF" width="200" height="200" version="1.1" viewBox="144 144 512 512" xmlns="http://www.w3.org/2000/svg">
+    <g id="IconSvg_bgCarrier" stroke-width="0"></g>
+    <g id="IconSvg_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0">
+      <defs xmlns="http://www.w3.org/2000/svg">
+  <clipPath id="b">
+   <path d="m299 248h352.9v304h-352.9z"></path>
+  </clipPath>
+  <clipPath id="a">
+   <path d="m148.09 173h277.91v454h-277.91z"></path>
+  </clipPath>
+ </defs>
+<g xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#b)">
+   <path d="m651.9 400-151.14-151.14v100.76h-201.52v100.76h201.52v100.76z"></path>
+  </g>
+  <g clip-path="url(#a)">
+   <path d="m198.48 223.66h226.71l-0.003906-50.379h-226.71c-27.711 0-50.383 22.672-50.383 50.379v352.67c0 27.711 22.672 50.383 50.383 50.383h226.71v-50.383h-226.71z"></path>
+  </g>
+ </g>
+
+      </g>
+     <g id="IconSvg_iconCarrier">
+      <defs xmlns="http://www.w3.org/2000/svg">
+  <clipPath id="b">
+   <path d="m299 248h352.9v304h-352.9z"></path>
+  </clipPath>
+  <clipPath id="a">
+   <path d="m148.09 173h277.91v454h-277.91z"></path>
+  </clipPath>
+ </defs>
+<g xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#b)">
+   <path d="m651.9 400-151.14-151.14v100.76h-201.52v100.76h201.52v100.76z"></path>
+  </g>
+  <g clip-path="url(#a)">
+   <path d="m198.48 223.66h226.71l-0.003906-50.379h-226.71c-27.711 0-50.383 22.672-50.383 50.379v352.67c0 27.711 22.672 50.383 50.383 50.383h226.71v-50.383h-226.71z"></path>
+  </g>
+ </g>
+
+      </g>
+      </svg>
