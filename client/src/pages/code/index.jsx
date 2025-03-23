@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import Timer from '../../components/timer'
-import Steps from '../../components/steps'
-import Editor from '../../components/editor'
-import Sample from '../../components/sample'
-import CheckButton from '../../components/checkButton'
+import { tasks } from '../../tasks';
+import Timer from '../../components/timer/index.js'
+import Steps from '../../components/steps/index.jsx'
+import Editor from '../../components/editor/index.jsx'
+import Sample from '../../components/sample/index.jsx'
+import CheckButton from '../../components/checkButton/index.js'
 
 import {
     StyledBody,
@@ -19,6 +20,12 @@ import {
 
 const Code = () => {
     const navigate = useNavigate();
+    const [enteredCode, setEnteredCode] = React.useState(`const injection = (prop) => {
+    // Код модуля injection, который вернет ожидаемый результат
+}
+`);
+
+    const [saveStep, setSaveStep] = useState(1);
     const [onboardingStep, setOnboardingStep] = useState(1);
 
     useEffect(() => {
@@ -42,6 +49,11 @@ const Code = () => {
         navigate('/');
     };
 
+    // const taskIndex = Math.floor(Math.random() * (14 - 0 + 1)) + 0;
+    const taskIndex = 0;
+
+    const task = tasks[taskIndex]
+
     return (
         <StyledFullScreen>
             { /* Затемнение экрана для онбординга */}
@@ -58,13 +70,13 @@ const Code = () => {
 
             { /* Поля для кода */}
             <StyledBody>
-                <Sample onboardingStep={onboardingStep} />
-                <Editor onboardingStep={onboardingStep} />
+                <Sample task={task} onboardingStep={onboardingStep} />
+                <Editor enteredCode={enteredCode} setEnteredCode={setEnteredCode} onboardingStep={onboardingStep} />
             </StyledBody>
 
             { /* Кнопка проверки кода */}
             <StyledFooter>
-                <CheckButton onboardingStep={onboardingStep} />
+                <CheckButton taskIndex={taskIndex} enteredCode={enteredCode} onboardingStep={onboardingStep} />
             </StyledFooter>
         </StyledFullScreen>
     );

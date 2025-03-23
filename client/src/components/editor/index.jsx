@@ -38,11 +38,9 @@ const customTheme = createTheme({
     ],
 });
 
-const Editor = ({ onboardingStep }) => {
-    const [value, setValue] = React.useState("console.log('hello world!');");
-
+const Editor = ({ enteredCode, setEnteredCode, onboardingStep }) => {
     const onChange = React.useCallback((val, viewUpdate) => {
-        setValue(val);
+        setEnteredCode(val);
     }, []);
 
     return (
@@ -50,7 +48,7 @@ const Editor = ({ onboardingStep }) => {
             { /* Поле для кода */}
             <EditorStyled onboardingStep={onboardingStep}>
                 <CodeMirror
-                    value={value}
+                    value={enteredCode}
                     height="60vh"
                     theme={customTheme}
                     onChange={onChange}

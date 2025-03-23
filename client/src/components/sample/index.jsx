@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { tags as t } from '@lezer/highlight';
 import CodeMirror from '@uiw/react-codemirror';
 import { createTheme } from '@uiw/codemirror-themes';
@@ -38,22 +38,15 @@ const customTheme = createTheme({
     ],
 });
 
-const Sample = ({ onboardingStep }) => {
-    const [value, setValue] = React.useState("console.log('hello world!');");
-
-    const onChange = React.useCallback((val, viewUpdate) => {
-        setValue(val);
-    }, []);
-
+const Sample = ({ task, onboardingStep }) => {
     return (
         <>
             { /* Поле для кода */}
             <SampleStyled onboardingStep={onboardingStep}>
                 <CodeMirror
-                    value={value}
+                    value={task}
                     height="60vh"
                     theme={customTheme}
-                    onChange={onChange}
                     extensions={[javascript({ jsx: true })]}
                 />
             </SampleStyled>
