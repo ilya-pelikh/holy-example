@@ -13,7 +13,7 @@
 }
 
 /* Стили для поп-апа */
-.popup {
+.negativPopup {
     position: relative;
     width: 400px;
     padding: 20px;
@@ -57,7 +57,7 @@
 }
 
 /* Стили для кнопки */
-.popup button {
+.buttonF {
     display: block;
     margin: 0 auto;
     /* Центрирование кнопки */
@@ -72,9 +72,4 @@
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.popup button:hover {
-    /* box-shadow: 0 0 5px rgba(250, 247, 76, 1), 0 0 5px rgba(86, 255, 113, 1); */
-    border: 2px solid rgb(250, 189, 76);
 }

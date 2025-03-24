@@ -49,8 +49,8 @@ const Code = () => {
         navigate('/');
     };
 
-    // const taskIndex = Math.floor(Math.random() * (14 - 0 + 1)) + 0;
-    const taskIndex = 0;
+    const taskIndex = Math.floor(Math.random() * (14 - 0 + 1)) + 0;
+    // const taskIndex = 0;
 
     const task = tasks[taskIndex]
 

@@ -24,7 +24,7 @@ const FaildFinish = () => {
             <div class="popup">
                 <h1>Время вышло!</h1>
                 <p>Злоумышленники оказались хитрее...</p>
-                <button>:(</button>
+                <button class='buttonF'>:(</button>
             </div>
         </div>
     );

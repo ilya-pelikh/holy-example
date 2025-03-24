@@ -67,14 +67,9 @@
     /* Белый текст */
     border: 2px solid rgba(86, 255, 113, 1);
     /* Зеленая обводка */
-    padding: 1px 14px;
+    padding: 14px;
     font-family: 'Minecraftia';
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.popup button:hover {
-    box-shadow: 0 0 5px rgba(250, 247, 76, 1), 0 0 5px rgba(86, 255, 113, 1);
-    /* border: 2px solid rgba(250, 247, 76, 1); */
 }

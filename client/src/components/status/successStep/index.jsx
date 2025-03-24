@@ -18,13 +18,13 @@ import './successStep.css'
 // // Пример вызова поп-апа
 // showPopup();
 
-const SuccessStep = () => {
+const SuccessStep = ({ onClose }) => {
     return (
         <div class="overlay">
             <div class="popup">
                 <h1>Код подобран верно!</h1>
                 <p>Ты на шаг ближе...</p>
-                <button>ок</button>
+                <button class='popupSuccStep specialSuccButton' onClick={onClose}>ок</button>
             </div>
         </div>
     );

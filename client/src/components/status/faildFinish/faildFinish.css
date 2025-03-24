@@ -21,7 +21,7 @@
     color: #fff;
     font-family: 'Minecraftia';
     text-align: center;
-    box-shadow: 0 0 20px rgb(255, 131, 86), 0 0 30px rgb(255, 131, 86);
+    box-shadow: 0 0 20px rgba(86, 255, 113, 1), 0 0 30px rgba(86, 255, 113, 1);
     animation: popupFadeIn 0.5s ease;
 }
 
@@ -57,7 +57,7 @@
 }
 
 /* Стили для кнопки */
-.popup button {
+.buttonF {
     display: block;
     margin: 0 auto;
     /* Центрирование кнопки */
@@ -65,15 +65,11 @@
     /* Черный фон */
     color: #fff;
     /* Белый текст */
-    border: 2px solid rgba(250, 247, 76, 1);
+    border: 2px solid rgba(86, 255, 113, 1);
     /* Зеленая обводка */
-    padding: 5px 18px;
+    padding: 10px 20px;
     font-family: 'Minecraftia';
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.popup button:hover {
-    border: 2px solid rgb(250, 189, 76);
 }

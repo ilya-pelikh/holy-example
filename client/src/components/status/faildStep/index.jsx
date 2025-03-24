@@ -18,13 +18,13 @@ import './faildStep.css'
 // // Пример вызова поп-апа
 // showPopup();
 
-const FaildStep = () => {
+const FaildStep = ({ onClose }) => {
     return (
         <div class="overlay">
-            <div class="popup">
+            <div class="negativPopup">
                 <h1>Не получилось :(</h1>
                 <p>Попробуй еще раз!</p>
-                <button>ок</button>
+                <button class='buttonF' onClick={onClose}>ок</button>
             </div>
         </div>
     );
