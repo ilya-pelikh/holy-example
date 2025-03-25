@@ -38,7 +38,7 @@ const Timer = ({ taskIndex, enteredCode, onboardingStep }) => {
 
     const onClick = () => Axios({
         method: "POST",
-        url: `http://localhost:3000/tasks/${taskIndex + 1}`,
+        url: `http://localhost:3001/tasks/${taskIndex + 1}`,
         headers: {
             "Content-Type": "application/json",
             "accept-token": "secret_token",

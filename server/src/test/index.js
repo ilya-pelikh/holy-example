@@ -4,6 +4,7 @@ const cors = require('cors');
 const express = require('express');
 const { Isolate } = require('isolated-vm');
 
+const testCaseLogger = require('../utils/testCaseLogger');
 const { createLogger } = require('../utils/logger');
 
 const { errors, infoMessages } = require('./constants')
@@ -13,7 +14,7 @@ const RUNTIME_TIMEOUT = 5000;
 const ACCEPT_TOKEN = 'secret_token';
 
 const app = express();
-const port = 3001;
+const port = 3002;
 
 app.use(cors());
 app.use(express.json());
@@ -34,6 +35,8 @@ const testUserSolution = async (reqBodyCode, testFile) => {
     await jail.set('global', jail.derefInto());
     // Выполняем код в изолированном контексте с ограничением времени
     const code = reqBodyCode + '\n\n' + testFile;
+
+    console.log('code', code);
 
     const response = await context.eval(code, { timeout: RUNTIME_TIMEOUT });
     const parsed = JSON.parse(response);
@@ -57,7 +60,28 @@ app.post('*', async (req, res) => {
         }
 
         const file = fs.readFileSync(path.resolve(__dirname, `./tests/${req.body.id}.js`), 'utf8');
-        const comparisonResult = await testUserSolution(req.body.code, file)
+        const comparisonResult = await testUserSolution(req.body.code, file);
+
+        // Логируем тест кейс
+        testCaseLogger({
+            taskId: req.body.id,
+            userCode: req.body.code,
+            result: comparisonResult.received || null,
+            expectedResult: comparisonResult.expected,
+        });
+
+        // Логируем каждый тест-кейс отдельно
+        if (comparisonResult && comparisonResult.testCases) {
+            comparisonResult.testCases.forEach((testCase, index) => {
+                testCaseLogger({
+                    taskId: req.body.id,
+                    testCaseNumber: index + 1,
+                    userCode: req.body.code,
+                    result: testCase.result,
+                    expectedResult: testCase.expected
+                });
+            });
+        }
 
         // Возвращаем результат
         logger({ id: 'TI2', description: infoMessages.TI2(), result: comparisonResult, status: 200 });

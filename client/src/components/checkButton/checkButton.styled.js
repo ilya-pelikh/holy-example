@@ -22,8 +22,11 @@ export const StyledCheckButton = styled.div`
     cursor: pointer;
 `
 
-export const StyledCheckButtonText = styled.div`
-    margin-top: 8px;
+export const StyledCheckButtonText = styled.button`
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent !important;
 `
 
 export const StyledCheckButtonOnboarding = styled.div`
