@@ -7,7 +7,7 @@ const { createLogger } = require('../utils/logger');
 
 const { errors, infoMessages } = require('./constants')
 
-const port = 3000;
+const port = 3001;
 const ACCEPT_TOKEN = 'secret_token';
 
 const app = express();
@@ -26,11 +26,12 @@ app.post('/tasks/:id', async (req, res) => {
         }
 
         const postData = [
-            'http://localhost:3001/',
+            'http://localhost:3002/',
             { code: req.body.code, id: req.params.id },
             { headers: { 'Accept-Token': ACCEPT_TOKEN } },
         ];
         const { data: { result } } = await axios.post(...postData);
+        console.log('result', result);
         logger({ id: 'MI2', description: infoMessages.TI2, result });
 
         if (result) {
