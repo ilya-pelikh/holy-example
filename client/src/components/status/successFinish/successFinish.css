@@ -1,0 +1,75 @@
+/* Основные стили для затемнения фона */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Стили для поп-апа */
+.popup {
+    position: relative;
+    width: 400px;
+    padding: 20px;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Minecraftia';
+    text-align: center;
+    box-shadow: 0 0 20px rgba(86, 255, 113, 1), 0 0 30px rgba(86, 255, 113, 1);
+    animation: popupFadeIn 0.5s ease;
+}
+
+/* Анимация появления */
+@keyframes popupFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Пиксельный шрифт */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Стили для текста */
+.popup h1 {
+    font-size: 20px;
+    margin: 0 0 20px 0;
+    color: #fff;
+    /* Белый текст */
+}
+
+.popup p {
+    font-size: 16px;
+    margin: 0 0 20px 0;
+    color: #fff;
+    /* Белый текст */
+}
+
+/* Стили для кнопки */
+.popup button {
+    display: block;
+    margin: 0 auto;
+    /* Центрирование кнопки */
+    background-color: #000;
+    /* Черный фон */
+    color: #fff;
+    /* Белый текст */
+    border: 2px solid rgba(86, 255, 113, 1);
+    /* Зеленая обводка */
+    padding: 14px;
+    font-family: 'Minecraftia';
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
