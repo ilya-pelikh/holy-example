@@ -26,12 +26,15 @@ function test() {
     const expected4 = 'hello world! + 3';
     const expected5 = ' + 3';
 
-    return (
-        compare(result1, expected1) &&
-        compare(result2, expected2) &&
-        compare(result3, expected3) &&
-        compare(result4, expected4) &&
-        compare(result5, expected5)
+    return testAll(
+        [
+            { result: result1, expected: expected1 },
+            { result: result2, expected: expected2 },
+            { result: result3, expected: expected3 },
+            { result: result4, expected: expected4 },
+            { result: result5, expected: expected5 },
+        ],
+        compare
     );
 }
 

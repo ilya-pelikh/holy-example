@@ -3,23 +3,6 @@
 //   return `+7 (${data.slice(0, 3)}) ${data.slice(3, 6)}-${data.slice(6, 8)}-${data.slice(8)}`;
 // };
 
-function testAll(compareArray, compareFn) {
-    let wrongTestIndex = null;
-    compareArray.forEach((test, index) => {
-        if (!compareFn(test.result, test.expected)) {
-            wrongTestIndex = index;
-        }
-    });
-    const resultObject = {
-        result: wrongTestIndex === null,
-    };
-    if (wrongTestIndex !== null) {
-        resultObject.expected = compareArray[wrongTestIndex].expected;
-        resultObject.received = compareArray[wrongTestIndex].result;
-    }
-    return JSON.stringify(resultObject);
-}
-
 const compare = (data1, data2) => {
     return data1 === data2;
 };

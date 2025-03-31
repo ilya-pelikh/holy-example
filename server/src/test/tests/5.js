@@ -2,30 +2,6 @@
 // function injection(data) {
 //   return data.filter(word => word === word.split('').reverse().join(''));
 // };
-function testAll(compareArray, compareFn) {
-    let wrongTestIndex = null;
-    compareArray.forEach((test, index) => {
-        if (!compareFn(test.result, test.expected)) {
-            wrongTestIndex = index;
-        }
-    });
-    const resultObject = {
-        result: wrongTestIndex === null,
-    };
-    if (wrongTestIndex !== null) {
-        resultObject.expected = compareArray[wrongTestIndex].expected;
-        resultObject.received = compareArray[wrongTestIndex].result;
-    }
-    return JSON.stringify(resultObject);
-}
-
-const compare = (data1, data2) => {
-    if (Array.isArray(data1) && Array.isArray(data2)) {
-        if (data1.length !== data2.length) return false;
-        return data1.every((item, index) => item === data2[index]);
-    }
-    return data1 === data2;
-};
 
 function test() {
     const data1 = ['level', 'hello', 'radar', 'world', 'madam'];
