@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { tasks } from '../../tasks';
 import Timer from '../../components/timer/index.js'
 import Steps from '../../components/steps/index.jsx'
 import Editor from '../../components/editor/index.jsx'
@@ -24,9 +23,14 @@ const Code = () => {
     // Код модуля injection, который вернет ожидаемый результат
 }
 `);
-
-    const [saveStep, setSaveStep] = useState(1);
+    const [taskSuite, setTaskSuites] = useState([]);
+    const [currentTaskIndex, setCurrentTaskIndex] = useState(0);
     const [onboardingStep, setOnboardingStep] = useState(1);
+
+    const onClickExitButton = () => {
+        // Переходим в начало
+        navigate('/');
+    };
 
     useEffect(() => {
         const handleClick = (event) => {
@@ -44,15 +48,21 @@ const Code = () => {
         };
     }, [onboardingStep]);
 
-    const onClickExitButton = () => {
-        // Переходим в начало
-        navigate('/');
-    };
+    useEffect(() => {
+        const fetchSuites = async () => {
+            const response = await fetch('http://localhost:3001/tasks/suite');
+            const data = await response.json();
+            setTaskSuites(data.suites);
+        };
 
-    const taskIndex = Math.floor(Math.random() * (14 - 0 + 1)) + 0;
-    // const taskIndex = 0;
+        try {
+            fetchSuites();
+        } catch (error) {
+            console.error('Error fetching suites:', error);
+        }
+    }, []);
 
-    const task = tasks[taskIndex]
+    const task = taskSuite[currentTaskIndex];
 
     return (
         <StyledFullScreen>
@@ -76,7 +86,7 @@ const Code = () => {
 
             { /* Кнопка проверки кода */}
             <StyledFooter>
-                <CheckButton taskIndex={taskIndex} enteredCode={enteredCode} onboardingStep={onboardingStep} />
+                <CheckButton taskIndex={currentTaskIndex} enteredCode={enteredCode} onboardingStep={onboardingStep} />
             </StyledFooter>
         </StyledFullScreen>
     );

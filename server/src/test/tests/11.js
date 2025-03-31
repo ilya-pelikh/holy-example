@@ -3,23 +3,6 @@
 //   return data.filter(item => item.active);
 // };
 
-function testAll(compareArray, compareFn) {
-    let wrongTestIndex = null;
-    compareArray.forEach((test, index) => {
-        if (!compareFn(test.result, test.expected)) {
-            wrongTestIndex = index;
-        }
-    });
-    const resultObject = {
-        result: wrongTestIndex === null,
-    };
-    if (wrongTestIndex !== null) {
-        resultObject.expected = compareArray[wrongTestIndex].expected;
-        resultObject.received = compareArray[wrongTestIndex].result;
-    }
-    return JSON.stringify(resultObject);
-}
-
 const compare = (data1, data2) => {
     if (!Array.isArray(data1) || !Array.isArray(data2)) return false;
     if (data1.length !== data2.length) return false;

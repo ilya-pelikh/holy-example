@@ -16,7 +16,7 @@ const customTheme = createTheme({
         caret: '#36FFFF', // цвет каретки
         selection: '#4C4E52', // цвет выделенного кода
         selectionMatch: '#4C4E52', // цвет текста по ctrl + F
-        lineHighlight: '#010B02', // 
+        lineHighlight: '#010B02', //
         gutterBackground: '#010B02', // цвет фона под нумерацией строк кода
         gutterForeground: 'grey', // цвет цифр в нумерации строк кода
     },
@@ -47,6 +47,7 @@ const Sample = ({ task, onboardingStep }) => {
                     value={task}
                     height="60vh"
                     theme={customTheme}
+                    readOnly
                     extensions={[javascript({ jsx: true })]}
                 />
             </SampleStyled>

@@ -7,8 +7,10 @@ const { Isolate } = require('isolated-vm');
 const testCaseLogger = require('../utils/testCaseLogger');
 const { createLogger } = require('../utils/logger');
 
-const { errors, infoMessages } = require('./constants')
+const { errors, infoMessages } = require('./constants');
+const testAll = require('./utils/testAll');
 
+const TASK_SUITES_COUNT = 5;
 const MEMORY_LIMIT = 64;
 const RUNTIME_TIMEOUT = 5000;
 const ACCEPT_TOKEN = 'secret_token';
@@ -22,7 +24,12 @@ const logger = createLogger('test');
 
 const ACCEPTED_IDS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'];
 
-// Выполнение теста с добавленным кодом решения пользлвателя с возвратом результата
+/**
+ * Выполнение теста с добавленным кодом решения пользователя с возвратом результата
+ * @param {string} reqBodyCode - Код для проверки
+ * @param {string} testFile - Файл с тестами
+ * @returns {Promise<{ result: boolean, expected: string, received: string, wrongTestIndex: number, testsCount: number }>} - Результат проверки
+ */
 const testUserSolution = async (reqBodyCode, testFile) => {
     // Создаем изолированный контекст с ограничением памяти
     const isolate = new Isolate({ memoryLimit: MEMORY_LIMIT }); // Ограничение памяти до 64 MB
@@ -34,17 +41,26 @@ const testUserSolution = async (reqBodyCode, testFile) => {
     // Устанавливаем глобальные переменные (опционально)
     await jail.set('global', jail.derefInto());
     // Выполняем код в изолированном контексте с ограничением времени
-    const code = reqBodyCode + '\n\n' + testFile;
-
-    console.log('code', code);
-
+    const code = testAll.toString() + '\n\n' + reqBodyCode + '\n\n' + testFile;
     const response = await context.eval(code, { timeout: RUNTIME_TIMEOUT });
     const parsed = JSON.parse(response);
 
-    return parsed
+    return parsed;
 }
 
-// 
+app.get('/tasks/suite', async (req, res) => {
+    const randomSuites = ACCEPTED_IDS.sort(() => Math.random() - 0.5).slice(0, TASK_SUITES_COUNT);
+
+    const files = [];
+    randomSuites.forEach((suite) => {
+        const file = fs.readFileSync(path.resolve(__dirname, `./tasks/${suite}.js`), 'utf8');
+        files.push(file);
+    });
+
+    res.status(200).send({ suites: files });
+});
+
+//
 app.post('*', async (req, res) => {
     try {
         logger({ id: 'TI1', description: infoMessages.TI1(), req: req.body });
@@ -60,6 +76,15 @@ app.post('*', async (req, res) => {
         }
 
         const file = fs.readFileSync(path.resolve(__dirname, `./tests/${req.body.id}.js`), 'utf8');
+        /**
+         * comparisonResult: {
+         *  result: boolean,
+         *  expected: string,
+         *  received: string,
+         *  wrongTestIndex: number,
+         *  testsCount: number
+         * }
+         */
         const comparisonResult = await testUserSolution(req.body.code, file);
 
         // Логируем тест кейс
@@ -70,23 +95,11 @@ app.post('*', async (req, res) => {
             expectedResult: comparisonResult.expected,
         });
 
-        // Логируем каждый тест-кейс отдельно
-        if (comparisonResult && comparisonResult.testCases) {
-            comparisonResult.testCases.forEach((testCase, index) => {
-                testCaseLogger({
-                    taskId: req.body.id,
-                    testCaseNumber: index + 1,
-                    userCode: req.body.code,
-                    result: testCase.result,
-                    expectedResult: testCase.expected
-                });
-            });
-        }
-
         // Возвращаем результат
         logger({ id: 'TI2', description: infoMessages.TI2(), result: comparisonResult, status: 200 });
         res.status(200).json({ result: comparisonResult }).send();
     } catch (error) {
+        console.log('Error while testing user solution:', error);
         switch (error) {
             case 'TE1':
                 logger({ id: 'TE1', description: errors.TE1(), status: 403 });

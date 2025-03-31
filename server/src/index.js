@@ -1,5 +1,6 @@
 // Безопасно управляем процессами main и test
 const { spawn } = require('child_process');
+const path = require('path');
 
 const subProcesses = [];
 
@@ -20,10 +21,10 @@ const onChildProcessClose = () => {
     });
 };
 
-const mainProcess = spawn('node', ['src/main'], { stdio: 'inherit' });
+const mainProcess = spawn('node', [path.join(__dirname, 'main', 'index.js')], { stdio: 'inherit' });
 subProcesses.push(mainProcess);
 
-const testProcess = spawn('node', ['src/test'], { stdio: 'inherit' });
+const testProcess = spawn('node', [path.join(__dirname, 'test', 'index.js')], { stdio: 'inherit' });
 subProcesses.push(testProcess);
 
 process.on('SIGINT', onMainProcessClose);
