@@ -1,0 +1,630 @@
+20.03.2025, 20:07:10
+{"id":1,"body":{"code":"function injection(data) {\n  return data.map((i) => i + 0)\n}"},"params":{"id":"1"}}
+20.03.2025, 20:07:10
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return data.map((i) => i + 0)\n}","id":"1"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:07:10
+{"id":3,"result":0}
+20.03.2025, 20:07:10
+{"id":5,"status":301}
+20.03.2025, 20:07:25
+{"id":1,"body":{"code":"function injection(data) {\n  return data.mdap((i) => i + 0)\n}"},"params":{"id":"1"}}
+20.03.2025, 20:07:25
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return data.mdap((i) => i + 0)\n}","id":"1"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:07:25
+{"id":6,"status":400,"err":{"error":"data.mdap is not a function"}}
+20.03.2025, 20:07:35
+{"id":1,"body":{"code":"function injection(data) {\n  return data.map((i) => i + 0)\n}"},"params":{"id":"1"}}
+20.03.2025, 20:07:35
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return data.map((i) => i + 0)\n}","id":"1"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:07:35
+{"id":3,"result":0}
+20.03.2025, 20:07:35
+{"id":5,"status":301}
+20.03.2025, 20:07:43
+{"id":1,"body":{"code":"function injection(data) {\n  return data.map((i) => i + 1)\n}"},"params":{"id":"1"}}
+20.03.2025, 20:07:43
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return data.map((i) => i + 1)\n}","id":"1"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:07:43
+{"id":3,"result":1}
+20.03.2025, 20:07:43
+{"id":4,"header":["Location","http://localhost:3000/tasks/2"]}
+20.03.2025, 20:07:43
+{"id":5,"status":301}
+20.03.2025, 20:08:19
+{"id":1,"body":{"code":"function injection(data) {\n  return data + ' + 3'\n}"},"params":{"id":"2"}}
+20.03.2025, 20:08:19
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return data + ' + 3'\n}","id":"2"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:08:19
+{"id":6,"status":400,"err":""}
+20.03.2025, 20:09:13
+{"id":1,"body":{"code":"function injection(data) {\n  return String(data) + ' + 3'\n}"},"params":{"id":"2"}}
+20.03.2025, 20:09:13
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String(data) + ' + 3'\n}","id":"2"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:09:13
+{"id":6,"status":400,"err":""}
+20.03.2025, 20:14:53
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String(data) + ' + 3'\n}","id":"2"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:14:53
+{"id":1,"body":{"code":"function injection(data) {\n  return String(data) + ' + 3'\n}"},"params":{"id":"2"}}
+20.03.2025, 20:14:53
+{"id":6,"status":400,"err":""}
+20.03.2025, 20:15:06
+{"id":1,"body":{"code":"function injection(data) {\n  return String(data) + ' + 3'\n}"},"params":{"id":"2"}}
+20.03.2025, 20:15:06
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String(data) + ' + 3'\n}","id":"2"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:15:06
+{"id":3,"result":true}
+20.03.2025, 20:15:06
+{"id":4,"header":["Location","http://localhost:3000/tasks/3"]}
+20.03.2025, 20:15:06
+{"id":5,"status":301}
+20.03.2025, 20:15:27
+{"id":1,"body":{"code":"const function = (data) => {\nreturn String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 20:15:27
+{"id":2,"postData":["http://localhost:3001/",{"code":"const function = (data) => {\nreturn String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:15:27
+{"id":6,"status":400,"err":{"error":"Unexpected token 'function' [<isolated-vm>:1:7]"}}
+20.03.2025, 20:15:37
+{"id":1,"body":{"code":"const injection = (data) => {\nreturn String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 20:15:37
+{"id":2,"postData":["http://localhost:3001/",{"code":"const injection = (data) => {\nreturn String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:15:37
+{"id":3,"result":false}
+20.03.2025, 20:15:37
+{"id":5,"status":301}
+20.03.2025, 20:15:51
+{"id":1,"body":{"code":"function injection(data) {\nreturn String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 20:15:51
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\nreturn String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:15:51
+{"id":3,"result":false}
+20.03.2025, 20:15:51
+{"id":5,"status":301}
+20.03.2025, 20:15:55
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 20:15:55
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:15:55
+{"id":5,"status":301}
+20.03.2025, 20:15:55
+{"id":3,"result":false}
+20.03.2025, 20:22:53
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 20:22:53
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:22:53
+{"id":3,"result":1}
+20.03.2025, 20:22:53
+{"id":4,"header":["Location","http://localhost:3000/tasks/4"]}
+20.03.2025, 20:22:53
+{"id":5,"status":301}
+20.03.2025, 20:23:37
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 20:23:37
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:23:37
+{"id":3,"result":false}
+20.03.2025, 20:23:37
+{"id":5,"status":301}
+20.03.2025, 20:28:10
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 20:28:10
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:28:10
+{"id":3}
+20.03.2025, 20:28:10
+{"id":5,"status":301}
+20.03.2025, 20:29:24
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 20:29:24
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:29:24
+{"id":6,"status":400,"err":{"error":"Cannot read properties of undefined (reading 'result')"}}
+20.03.2025, 20:29:46
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 20:29:46
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:29:46
+{"id":6,"status":400,"err":{"error":"Illegal return statement [<isolated-vm>:52:1]"}}
+20.03.2025, 20:29:48
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 20:29:48
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:29:48
+{"id":6,"status":400,"err":{"error":"Illegal return statement [<isolated-vm>:52:1]"}}
+20.03.2025, 20:31:04
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 20:31:04
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:31:04
+{"id":6,"status":400,"err":{"error":"Cannot read properties of undefined (reading 'result')"}}
+20.03.2025, 20:31:08
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(..1.data);\n};"},"params":{"id":"3"}}
+20.03.2025, 20:31:08
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(..1.data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:31:08
+{"id":6,"status":400,"err":{"error":"Unexpected token '.' [<isolated-vm>:2:30]"}}
+20.03.2025, 20:31:10
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 20:31:10
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:31:10
+{"id":6,"status":400,"err":{"error":"Cannot read properties of undefined (reading 'result')"}}
+20.03.2025, 20:31:20
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 20:31:20
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:31:20
+{"id":3}
+20.03.2025, 20:31:20
+{"id":5,"status":301}
+20.03.2025, 20:31:40
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 20:31:40
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:31:40
+{"id":6,"status":400,"err":{"error":"Cannot read properties of undefined (reading 'result')"}}
+20.03.2025, 20:31:58
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 20:31:58
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:31:58
+{"id":3}
+20.03.2025, 20:31:58
+{"id":5,"status":301}
+20.03.2025, 20:32:42
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 20:32:42
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:32:42
+{"id":6,"status":400,"err":{"error":"Cannot read properties of undefined (reading 'result')"}}
+20.03.2025, 20:32:52
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 20:32:52
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:32:52
+{"id":3}
+20.03.2025, 20:32:52
+{"id":5,"status":301}
+20.03.2025, 20:33:21
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 20:33:21
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:33:21
+{"id":3}
+20.03.2025, 20:33:21
+{"id":5,"status":301}
+20.03.2025, 20:33:34
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 20:33:34
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:33:34
+{"id":3}
+20.03.2025, 20:33:34
+{"id":5,"status":301}
+20.03.2025, 20:33:54
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 20:33:54
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:33:54
+{"id":6,"status":400,"err":{"error":"Cannot read properties of undefined (reading 'result')"}}
+20.03.2025, 20:33:55
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:33:55
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 20:33:55
+{"id":6,"status":400,"err":{"error":"Cannot read properties of undefined (reading 'result')"}}
+20.03.2025, 20:34:09
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 20:34:09
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:34:09
+{"id":3}
+20.03.2025, 20:34:09
+{"id":5,"status":301}
+20.03.2025, 20:35:23
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 20:35:23
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:35:23
+{"id":3}
+20.03.2025, 20:35:23
+{"id":5,"status":301}
+20.03.2025, 20:38:07
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 20:38:07
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:38:07
+{"id":3}
+20.03.2025, 20:38:07
+{"id":5,"status":301}
+20.03.2025, 20:38:41
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 20:38:41
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:38:41
+{"id":3}
+20.03.2025, 20:38:41
+{"id":5,"status":301}
+20.03.2025, 20:39:01
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 20:39:01
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:39:01
+{"id":3,"result":true}
+20.03.2025, 20:39:01
+{"id":4,"header":["Location","http://localhost:3000/tasks/4"]}
+20.03.2025, 20:39:01
+{"id":5,"status":301}
+20.03.2025, 20:39:29
+{"id":1,"body":{"code":"        function injection(data) {\n  return Buffer.from(data, 'base64').toString('utf-8');\n  // return btoa(data); // для проверки в браузере\n};"},"params":{"id":"4"}}
+20.03.2025, 20:39:29
+{"id":2,"postData":["http://localhost:3001/",{"code":"        function injection(data) {\n  return Buffer.from(data, 'base64').toString('utf-8');\n  // return btoa(data); // для проверки в браузере\n};","id":"4"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:39:29
+{"id":6,"status":400,"err":{"error":"Buffer is not defined"}}
+20.03.2025, 20:39:58
+{"id":1,"body":{"code":"        function injection(data) {\n  return btoa(data); // для проверки в браузере\n};"},"params":{"id":"4"}}
+20.03.2025, 20:39:58
+{"id":2,"postData":["http://localhost:3001/",{"code":"        function injection(data) {\n  return btoa(data); // для проверки в браузере\n};","id":"4"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:39:58
+{"id":6,"status":400,"err":{"error":"btoa is not defined"}}
+20.03.2025, 20:43:36
+{"id":1,"body":{"code":"        function injection(data) {\n  return btoa(data); // для проверки в браузере\n};"},"params":{"id":"4"}}
+20.03.2025, 20:43:36
+{"id":2,"postData":["http://localhost:3001/",{"code":"        function injection(data) {\n  return btoa(data); // для проверки в браузере\n};","id":"4"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:43:36
+{"id":3}
+20.03.2025, 20:43:36
+{"id":5,"status":301}
+20.03.2025, 20:45:24
+{"id":1,"body":{"code":"        function injection(data) {\n  return btoa(data); // для проверки в браузере\n};"},"params":{"id":"4"}}
+20.03.2025, 20:45:24
+{"id":2,"postData":["http://localhost:3001/",{"code":"        function injection(data) {\n  return btoa(data); // для проверки в браузере\n};","id":"4"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 20:45:24
+{"id":6,"status":400,"err":{"error":"require is not defined"}}
+20.03.2025, 21:13:58
+{"id":1,"body":{"code":" function injection(data) {\n   return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 21:13:58
+{"id":2,"postData":["http://localhost:3001/",{"code":" function injection(data) {\n   return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:13:58
+{"id":3,"result":true}
+20.03.2025, 21:13:58
+{"id":4,"header":["Location","http://localhost:3000/tasks/4"]}
+20.03.2025, 21:13:58
+{"id":5,"status":301}
+20.03.2025, 21:14:10
+{"id":1,"body":{"code":"function injection(data) {\n  return Buffer.from(data, 'base64').toString('utf-8');\n  // return btoa(data); // для проверки в браузере\n};"},"params":{"id":"4"}}
+20.03.2025, 21:14:10
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return Buffer.from(data, 'base64').toString('utf-8');\n  // return btoa(data); // для проверки в браузере\n};","id":"4"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:14:10
+{"id":6,"status":400,"err":{"error":"Buffer is not defined"}}
+20.03.2025, 21:14:17
+{"id":1,"body":{"code":"function injection(data) {\n  return btoa(data); // для проверки в браузере\n};"},"params":{"id":"4"}}
+20.03.2025, 21:14:17
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return btoa(data); // для проверки в браузере\n};","id":"4"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:14:17
+{"id":3,"result":false}
+20.03.2025, 21:14:17
+{"id":5,"status":301}
+20.03.2025, 21:15:55
+{"id":1,"body":{"code":"function injection(data) {\n  return btoa(data); // для проверки в браузере\n};"},"params":{"id":"4"}}
+20.03.2025, 21:15:55
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return btoa(data); // для проверки в браузере\n};","id":"4"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:15:55
+{"id":6,"status":400,"err":{"error":"Unsupported encoding: binary"}}
+20.03.2025, 21:15:58
+{"id":1,"body":{"code":"function injection(data) {\n  return Buffer.from(data, 'base64').toString('utf-8');\n  // return btoa(data); // для проверки в браузере\n};"},"params":{"id":"4"}}
+20.03.2025, 21:15:58
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return Buffer.from(data, 'base64').toString('utf-8');\n  // return btoa(data); // для проверки в браузере\n};","id":"4"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:15:58
+{"id":6,"status":400,"err":{"error":"TextDecoder is not defined"}}
+20.03.2025, 21:19:59
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 21:19:59
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:19:59
+{"id":6,"status":400,"err":{"error":"require is not defined"}}
+20.03.2025, 21:20:12
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 21:20:12
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:20:12
+{"id":6,"status":400,"err":{"error":"require is not a function"}}
+20.03.2025, 21:21:33
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 21:21:33
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:21:33
+{"id":6,"status":400,"err":{"error":"require is not a function"}}
+20.03.2025, 21:22:14
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 21:22:14
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:22:14
+{"id":6,"status":400,"err":{"error":"require is not a function"}}
+20.03.2025, 21:22:39
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 21:22:39
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:22:39
+{"id":6,"status":400,"err":{"error":"require is not a function"}}
+20.03.2025, 21:23:19
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 21:23:19
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:23:19
+{"id":6,"status":400,"err":{"error":"require is not a function"}}
+20.03.2025, 21:24:54
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 21:24:54
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:24:54
+{"id":6,"status":400,"err":{"error":"require is not a function"}}
+20.03.2025, 21:25:23
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 21:25:23
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:25:23
+{"id":6,"status":400,"err":{"error":"(moduleName) => {\n        // Список разрешенных модулей\n        const allowedModules = ['crypto', 'path', 'url'...<omitted>... } could not be cloned."}}
+20.03.2025, 21:25:41
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 21:25:41
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:25:41
+{"id":6,"status":400,"err":{"error":"(moduleName) => {\n        // Список разрешенных модулей\n        const allowedModules = ['./utils/testAll'];\n\n  ...<omitted>... } could not be cloned."}}
+20.03.2025, 21:29:56
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 21:29:56
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:29:56
+{"id":6,"status":400,"err":{"error":"global is not defined"}}
+20.03.2025, 21:30:59
+{"id":1,"body":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};"},"params":{"id":"3"}}
+20.03.2025, 21:30:59
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:30:59
+{"id":3,"result":true}
+20.03.2025, 21:30:59
+{"id":4,"header":["Location","http://localhost:3000/tasks/4"]}
+20.03.2025, 21:30:59
+{"id":5,"status":301}
+20.03.2025, 21:31:44
+{"id":1,"body":{"code":"function injection(data) {\n  return btoa(data); // для проверки в браузере\n};"},"params":{"id":"4"}}
+20.03.2025, 21:31:44
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return btoa(data); // для проверки в браузере\n};","id":"4"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:31:44
+{"id":3,"result":false}
+20.03.2025, 21:31:44
+{"id":5,"status":301}
+20.03.2025, 21:31:50
+{"id":1,"body":{"code":"function injection(data) {\n  return btoa(data); // для проверки в браузере\n};"},"params":{"id":"4"}}
+20.03.2025, 21:31:50
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return btoa(data); // для проверки в браузере\n};","id":"4"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:31:50
+{"id":3,"result":false}
+20.03.2025, 21:31:50
+{"id":5,"status":301}
+20.03.2025, 21:33:18
+{"id":1,"body":{"code":"function injection(data) {\n  return atob(data); // для проверки в браузере\n};"},"params":{"id":"4"}}
+20.03.2025, 21:33:18
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return atob(data); // для проверки в браузере\n};","id":"4"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:33:18
+{"id":3,"result":true}
+20.03.2025, 21:33:18
+{"id":4,"header":["Location","http://localhost:3000/tasks/5"]}
+20.03.2025, 21:33:18
+{"id":5,"status":301}
+20.03.2025, 21:34:02
+{"id":1,"body":{"code":"function injection(data) {\n  return data.filter(word => word === word.split('').reverse().join(''));\n};"},"params":{"id":"5"}}
+20.03.2025, 21:34:02
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return data.filter(word => word === word.split('').reverse().join(''));\n};","id":"5"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:34:02
+{"id":3,"result":true}
+20.03.2025, 21:34:02
+{"id":4,"header":["Location","http://localhost:3000/tasks/6"]}
+20.03.2025, 21:34:02
+{"id":5,"status":301}
+20.03.2025, 21:34:26
+{"id":1,"body":{"code":"function injection(data) {\n  return data.reduce((acc, word) => {\n    const length = word.length;\n    acc[length] = acc[length] || [];\n    acc[length].push(word);\n    return acc;\n  }, {});\n};"},"params":{"id":"6"}}
+20.03.2025, 21:34:26
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return data.reduce((acc, word) => {\n    const length = word.length;\n    acc[length] = acc[length] || [];\n    acc[length].push(word);\n    return acc;\n  }, {});\n};","id":"6"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:34:26
+{"id":3}
+20.03.2025, 21:34:26
+{"id":5,"status":301}
+20.03.2025, 21:34:43
+{"id":1,"body":{"code":"function injection(data) {\n  return data.reduce((acc, word) => {\n    const length = word.length;\n    acc[length] = acc[length] || [];\n    acc[length].push(word);\n    return acc;\n  }, {});\n};"},"params":{"id":"6"}}
+20.03.2025, 21:34:43
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return data.reduce((acc, word) => {\n    const length = word.length;\n    acc[length] = acc[length] || [];\n    acc[length].push(word);\n    return acc;\n  }, {});\n};","id":"6"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:34:43
+{"id":3,"result":true}
+20.03.2025, 21:34:43
+{"id":4,"header":["Location","http://localhost:3000/tasks/7"]}
+20.03.2025, 21:34:43
+{"id":5,"status":301}
+20.03.2025, 21:35:09
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return Object.entries(data)\n    .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)\n    .join('&');\n};","id":"7"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:35:09
+{"id":1,"body":{"code":"function injection(data) {\n  return Object.entries(data)\n    .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)\n    .join('&');\n};"},"params":{"id":"7"}}
+20.03.2025, 21:35:09
+{"id":3,"result":true}
+20.03.2025, 21:35:09
+{"id":4,"header":["Location","http://localhost:3000/tasks/8"]}
+20.03.2025, 21:35:09
+{"id":5,"status":301}
+20.03.2025, 21:35:13
+{"id":1,"body":{"code":"function injection(data) {\n  return Object.entries(data)\n    .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)\n    .join('&1');\n};"},"params":{"id":"7"}}
+20.03.2025, 21:35:13
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return Object.entries(data)\n    .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)\n    .join('&1');\n};","id":"7"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:35:13
+{"id":3,"result":false}
+20.03.2025, 21:35:13
+{"id":5,"status":301}
+20.03.2025, 21:35:18
+{"id":1,"body":{"code":"function injection(data) {\n  return Object.entries(data)\n    .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)\n    .join('&');\n};"},"params":{"id":"7"}}
+20.03.2025, 21:35:18
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return Object.entries(data)\n    .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)\n    .join('&');\n};","id":"7"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:35:18
+{"id":3,"result":true}
+20.03.2025, 21:35:18
+{"id":4,"header":["Location","http://localhost:3000/tasks/8"]}
+20.03.2025, 21:35:18
+{"id":5,"status":301}
+20.03.2025, 21:37:31
+{"id":1,"body":{"code":"function injection(data) {\n  return data.split('').reduce((acc, char) => {\n    acc[char] = (acc[char] || 0) + 1;\n    return acc;\n  }, {});\n};"},"params":{"id":"8"}}
+20.03.2025, 21:37:31
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return data.split('').reduce((acc, char) => {\n    acc[char] = (acc[char] || 0) + 1;\n    return acc;\n  }, {});\n};","id":"8"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:37:31
+{"id":3,"result":true}
+20.03.2025, 21:37:31
+{"id":4,"header":["Location","http://localhost:3000/tasks/9"]}
+20.03.2025, 21:37:31
+{"id":5,"status":301}
+20.03.2025, 21:37:41
+{"id":1,"body":{"code":"function injection(data) {\n  const date = new Date(data);\n  return {\n    year: date.getFullYear(),\n    month: date.getMonth() + 1,\n    day: date.getDate(),\n    hours: date.getHours(),\n    minutes: date.getMinutes(),\n    seconds: date.getSeconds()\n  };\n};"},"params":{"id":"9"}}
+20.03.2025, 21:37:41
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  const date = new Date(data);\n  return {\n    year: date.getFullYear(),\n    month: date.getMonth() + 1,\n    day: date.getDate(),\n    hours: date.getHours(),\n    minutes: date.getMinutes(),\n    seconds: date.getSeconds()\n  };\n};","id":"9"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:37:41
+{"id":3,"result":false}
+20.03.2025, 21:37:41
+{"id":5,"status":301}
+20.03.2025, 21:39:19
+{"id":1,"body":{"code":"function injection(data) {\n  const date = new Date(data);\n  return {\n    year: date.getFullYear(),\n    month: date.getMonth() + 1,\n    day: date.getDate(),\n    hours: date.getHours(),\n    minutes: date.getMinutes(),\n    seconds: date.getSeconds()\n  };\n};"},"params":{"id":"9"}}
+20.03.2025, 21:39:19
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  const date = new Date(data);\n  return {\n    year: date.getFullYear(),\n    month: date.getMonth() + 1,\n    day: date.getDate(),\n    hours: date.getHours(),\n    minutes: date.getMinutes(),\n    seconds: date.getSeconds()\n  };\n};","id":"9"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:39:19
+{"id":5,"status":301}
+20.03.2025, 21:39:19
+{"id":3,"result":false}
+20.03.2025, 21:39:32
+{"id":1,"body":{"code":"function injection(data) {\n  const date = new Date(data);\n  return {\n    year: date.getFullYear(),\n    month: date.getMonth() + 1,\n    day: date.getDate(),\n    hours: date.getHours(),\n    minutes: date.getMinutes(),\n    seconds: date.getSeconds()\n  };\n};"},"params":{"id":"9"}}
+20.03.2025, 21:39:32
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  const date = new Date(data);\n  return {\n    year: date.getFullYear(),\n    month: date.getMonth() + 1,\n    day: date.getDate(),\n    hours: date.getHours(),\n    minutes: date.getMinutes(),\n    seconds: date.getSeconds()\n  };\n};","id":"9"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:39:32
+{"id":3,"result":false}
+20.03.2025, 21:39:32
+{"id":5,"status":301}
+20.03.2025, 21:40:00
+{"id":1,"body":{"code":"function injection(data) {\n  const date = new Date(data);\n  return {\n    year: date.getFullYear(),\n    month: date.getMonth() + 1,\n    day: date.getDate(),\n    hours: date.getHours(),\n    minutes: date.getMinutes(),\n    seconds: date.getSeconds()\n  };\n};"},"params":{"id":"9"}}
+20.03.2025, 21:40:00
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  const date = new Date(data);\n  return {\n    year: date.getFullYear(),\n    month: date.getMonth() + 1,\n    day: date.getDate(),\n    hours: date.getHours(),\n    minutes: date.getMinutes(),\n    seconds: date.getSeconds()\n  };\n};","id":"9"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:40:00
+{"id":3,"result":false}
+20.03.2025, 21:40:00
+{"id":5,"status":301}
+20.03.2025, 21:40:38
+{"id":1,"body":{"code":"function injection(data) {\n  const date = new Date(data);\n  return {\n    year: date.getFullYear(),\n    month: date.getMonth() + 1,\n    day: date.getDate(),\n    hours: date.getHours(),\n    minutes: date.getMinutes(),\n    seconds: date.getSeconds()\n  };\n};"},"params":{"id":"9"}}
+20.03.2025, 21:40:38
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  const date = new Date(data);\n  return {\n    year: date.getFullYear(),\n    month: date.getMonth() + 1,\n    day: date.getDate(),\n    hours: date.getHours(),\n    minutes: date.getMinutes(),\n    seconds: date.getSeconds()\n  };\n};","id":"9"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:40:38
+{"id":3,"result":true}
+20.03.2025, 21:40:38
+{"id":4,"header":["Location","http://localhost:3000/tasks/10"]}
+20.03.2025, 21:40:38
+{"id":5,"status":301}
+20.03.2025, 21:40:49
+{"id":1,"body":{"code":"function injection(data) {\n  return `+7 (${data.slice(0, 3)}) ${data.slice(3, 6)}-${data.slice(6, 8)}-${data.slice(8)}`;\n};"},"params":{"id":"10"}}
+20.03.2025, 21:40:49
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return `+7 (${data.slice(0, 3)}) ${data.slice(3, 6)}-${data.slice(6, 8)}-${data.slice(8)}`;\n};","id":"10"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:40:49
+{"id":3,"result":true}
+20.03.2025, 21:40:49
+{"id":4,"header":["Location","http://localhost:3000/tasks/11"]}
+20.03.2025, 21:40:49
+{"id":5,"status":301}
+20.03.2025, 21:41:02
+{"id":1,"body":{"code":"function injection(data) {\n  return data.filter(item => item.active);\n};"},"params":{"id":"11"}}
+20.03.2025, 21:41:02
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return data.filter(item => item.active);\n};","id":"11"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:41:02
+{"id":3,"result":true}
+20.03.2025, 21:41:02
+{"id":4,"header":["Location","http://localhost:3000/tasks/12"]}
+20.03.2025, 21:41:02
+{"id":5,"status":301}
+20.03.2025, 21:41:14
+{"id":1,"body":{"code":"function injection(data) {\n  const toHex = (value) => {\n    const hex = value.toString(16).toUpperCase();\n    return hex.length === 1 ? '0' + hex : hex;\n  };\n\n  return `#${toHex(data.r)}${toHex(data.g)}${toHex(data.b)}`;\n};"},"params":{"id":"12"}}
+20.03.2025, 21:41:14
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  const toHex = (value) => {\n    const hex = value.toString(16).toUpperCase();\n    return hex.length === 1 ? '0' + hex : hex;\n  };\n\n  return `#${toHex(data.r)}${toHex(data.g)}${toHex(data.b)}`;\n};","id":"12"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:41:14
+{"id":3,"result":true}
+20.03.2025, 21:41:14
+{"id":4,"header":["Location","http://localhost:3000/tasks/13"]}
+20.03.2025, 21:41:14
+{"id":5,"status":301}
+20.03.2025, 21:41:26
+{"id":1,"body":{"code":"function injection(data) {\n  return [...data].sort((a, b) => b.score - a.score);\n};"},"params":{"id":"13"}}
+20.03.2025, 21:41:26
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return [...data].sort((a, b) => b.score - a.score);\n};","id":"13"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:41:26
+{"id":3,"result":true}
+20.03.2025, 21:41:26
+{"id":4,"header":["Location","http://localhost:3000/tasks/14"]}
+20.03.2025, 21:41:26
+{"id":5,"status":301}
+20.03.2025, 21:41:37
+{"id":1,"body":{"code":"function injection(data) {\n  return data\n    .split(' ')\n    .map(word => word.charAt(0).toUpperCase())\n    .join('');\n};"},"params":{"id":"14"}}
+20.03.2025, 21:41:37
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return data\n    .split(' ')\n    .map(word => word.charAt(0).toUpperCase())\n    .join('');\n};","id":"14"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:41:37
+{"id":3,"result":true}
+20.03.2025, 21:41:37
+{"id":4,"header":["Location","http://localhost:3000/tasks/15"]}
+20.03.2025, 21:41:37
+{"id":5,"status":301}
+20.03.2025, 21:41:48
+{"id":1,"body":{"code":"function injection(data) {\n  return data.split(/\\s+/).filter(word => word.length > 0).length;\n};"},"params":{"id":"15"}}
+20.03.2025, 21:41:48
+{"id":2,"postData":["http://localhost:3001/",{"code":"function injection(data) {\n  return data.split(/\\s+/).filter(word => word.length > 0).length;\n};","id":"15"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:41:48
+{"id":3,"result":true}
+20.03.2025, 21:41:48
+{"id":5,"status":301}
+20.03.2025, 21:41:48
+{"id":4,"header":["Location","http://localhost:3000/tasks/16"]}
+20.03.2025, 21:47:30
+{"id":1,"body":{"code":"        function injection(data) {\n  return btoa(data); // для проверки в браузере\n};"},"params":{"id":"4"}}
+20.03.2025, 21:47:30
+{"id":2,"postData":["http://localhost:3001/",{"code":"        function injection(data) {\n  return btoa(data); // для проверки в браузере\n};","id":"4"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:47:30
+{"id":3,"result":false}
+20.03.2025, 21:47:30
+{"id":5,"status":301}
+20.03.2025, 21:47:55
+{"id":1,"body":{"code":"        function injection(data) {\n  return btoa(data); // для проверки в браузере\n};"},"params":{"id":"4"}}
+20.03.2025, 21:47:55
+{"id":2,"postData":["http://localhost:3001/",{"code":"        function injection(data) {\n  return btoa(data); // для проверки в браузере\n};","id":"4"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:47:55
+{"id":3,"result":false}
+20.03.2025, 21:47:55
+{"id":5,"status":301}
+20.03.2025, 21:48:29
+{"id":1,"body":{"code":"        function injection(data) {\n  return btoa(data); // для проверки в браузере\n};"},"params":{"id":"4"}}
+20.03.2025, 21:48:29
+{"id":2,"postData":["http://localhost:3001/",{"code":"        function injection(data) {\n  return btoa(data); // для проверки в браузере\n};","id":"4"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:48:29
+{"id":6,"status":400,"err":{"error":"testAll is not defined"}}
+20.03.2025, 21:48:34
+{"id":1,"body":{"code":"        function injection(data) {\n  return atob(data); // для проверки в браузере\n};"},"params":{"id":"4"}}
+20.03.2025, 21:48:34
+{"id":2,"postData":["http://localhost:3001/",{"code":"        function injection(data) {\n  return atob(data); // для проверки в браузере\n};","id":"4"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:48:34
+{"id":6,"status":400,"err":{"error":"testAll is not defined"}}
+20.03.2025, 21:48:49
+{"id":1,"body":{"code":"        function injection(data) {\n  return atob(data); // для проверки в браузере\n};"},"params":{"id":"4"}}
+20.03.2025, 21:48:49
+{"id":2,"postData":["http://localhost:3001/",{"code":"        function injection(data) {\n  return atob(data); // для проверки в браузере\n};","id":"4"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:48:49
+{"id":3,"result":true}
+20.03.2025, 21:48:49
+{"id":4,"header":["Location","http://localhost:3000/tasks/5"]}
+20.03.2025, 21:48:49
+{"id":5,"status":301}
+20.03.2025, 21:48:55
+{"id":1,"body":{"code":"        function injection(data) {\n  return btoa(data); // для проверки в браузере\n};"},"params":{"id":"4"}}
+20.03.2025, 21:48:55
+{"id":2,"postData":["http://localhost:3001/",{"code":"        function injection(data) {\n  return btoa(data); // для проверки в браузере\n};","id":"4"},{"headers":{"Accept-Token":"secret_token"}}]}
+20.03.2025, 21:48:55
+{"id":3,"result":false}
+20.03.2025, 21:48:55
+{"id":5,"status":301}

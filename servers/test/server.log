@@ -1,0 +1,486 @@
+20.03.2025, 20:07:10
+{"id":1,"req":{"code":"function injection(data) {\n  return data.map((i) => i + 0)\n}","id":"1"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"82","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:07:10
+{"id":3,"file":"./tests/1.js"}
+20.03.2025, 20:07:10
+{"id":4,"status":200,"result":0}
+20.03.2025, 20:07:25
+{"id":1,"req":{"code":"function injection(data) {\n  return data.mdap((i) => i + 0)\n}","id":"1"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"83","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:07:25
+{"id":3,"file":"./tests/1.js"}
+20.03.2025, 20:07:25
+{"id":5,"status":400,"message":"data.mdap is not a function"}
+20.03.2025, 20:07:35
+{"id":1,"req":{"code":"function injection(data) {\n  return data.map((i) => i + 0)\n}","id":"1"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"82","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:07:35
+{"id":3,"file":"./tests/1.js"}
+20.03.2025, 20:07:35
+{"id":4,"status":200,"result":0}
+20.03.2025, 20:07:43
+{"id":1,"req":{"code":"function injection(data) {\n  return data.map((i) => i + 1)\n}","id":"1"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"82","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:07:43
+{"id":3,"file":"./tests/1.js"}
+20.03.2025, 20:07:43
+{"id":4,"status":200,"result":1}
+20.03.2025, 20:08:19
+{"id":1,"req":{"code":"function injection(data) {\n  return data + ' + 3'\n}","id":"2"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"73","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:08:19
+{"id":2,"status":403}
+20.03.2025, 20:09:13
+{"id":1,"req":{"code":"function injection(data) {\n  return String(data) + ' + 3'\n}","id":"2"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"81","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:09:13
+{"id":2,"status":403}
+20.03.2025, 20:14:53
+{"id":1,"req":{"code":"function injection(data) {\n  return String(data) + ' + 3'\n}","id":"2"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"81","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:14:53
+{"id":2,"status":403}
+20.03.2025, 20:15:06
+{"id":1,"req":{"code":"function injection(data) {\n  return String(data) + ' + 3'\n}","id":"2"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"81","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:15:06
+{"id":3,"file":"./tests/2.js"}
+20.03.2025, 20:15:06
+{"id":4,"status":200,"result":true}
+20.03.2025, 20:15:27
+{"id":1,"req":{"code":"const function = (data) => {\nreturn String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:15:27
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 20:15:27
+{"id":5,"status":400,"message":"Unexpected token 'function' [<isolated-vm>:1:7]"}
+20.03.2025, 20:15:37
+{"id":1,"req":{"code":"const injection = (data) => {\nreturn String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"91","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:15:37
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 20:15:37
+{"id":4,"status":200,"result":false}
+20.03.2025, 20:15:51
+{"id":1,"req":{"code":"function injection(data) {\nreturn String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"88","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:15:51
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 20:15:51
+{"id":4,"status":200,"result":false}
+20.03.2025, 20:15:55
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:15:55
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 20:15:55
+{"id":4,"status":200,"result":false}
+20.03.2025, 20:22:53
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:22:53
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 20:22:53
+{"id":4,"status":200,"result":1}
+20.03.2025, 20:23:37
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:23:37
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 20:23:37
+{"id":4,"status":200,"result":false}
+20.03.2025, 20:28:10
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:28:10
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 20:28:10
+{"id":4,"status":200}
+20.03.2025, 20:29:24
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:29:24
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 20:29:24
+{"id":5,"status":400,"message":"Cannot read properties of undefined (reading 'result')"}
+20.03.2025, 20:29:46
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:29:46
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 20:29:46
+{"id":5,"status":400,"message":"Illegal return statement [<isolated-vm>:52:1]"}
+20.03.2025, 20:29:48
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:29:48
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 20:29:48
+{"id":5,"status":400,"message":"Illegal return statement [<isolated-vm>:52:1]"}
+20.03.2025, 20:31:04
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:31:04
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 20:31:04
+{"id":5,"status":400,"message":"Cannot read properties of undefined (reading 'result')"}
+20.03.2025, 20:31:08
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(..1.data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"91","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:31:08
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 20:31:08
+{"id":5,"status":400,"message":"Unexpected token '.' [<isolated-vm>:2:30]"}
+20.03.2025, 20:31:10
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:31:10
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 20:31:10
+{"id":5,"status":400,"message":"Cannot read properties of undefined (reading 'result')"}
+20.03.2025, 20:31:20
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:31:20
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 20:31:20
+{"id":4,"status":200}
+20.03.2025, 20:31:40
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:31:40
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 20:31:40
+{"id":5,"status":400,"message":"Cannot read properties of undefined (reading 'result')"}
+20.03.2025, 20:31:58
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:31:58
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 20:31:58
+{"id":4,"status":200}
+20.03.2025, 20:32:42
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:32:42
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 20:32:42
+{"id":5,"status":400,"message":"Cannot read properties of undefined (reading 'result')"}
+20.03.2025, 20:32:52
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:32:52
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 20:32:52
+{"id":4,"status":200}
+20.03.2025, 20:33:21
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:33:21
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 20:33:21
+{"id":4,"status":200}
+20.03.2025, 20:33:34
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:33:34
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 20:33:34
+{"id":4,"status":200}
+20.03.2025, 20:33:54
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:33:54
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 20:33:54
+{"id":5,"status":400,"message":"Cannot read properties of undefined (reading 'result')"}
+20.03.2025, 20:33:55
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:33:55
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 20:33:55
+{"id":5,"status":400,"message":"Cannot read properties of undefined (reading 'result')"}
+20.03.2025, 20:34:09
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:34:09
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 20:34:09
+{"id":4,"status":200}
+20.03.2025, 20:35:23
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:35:23
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 20:35:23
+{"id":4,"status":200,"result":false}
+20.03.2025, 20:38:07
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:38:07
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 20:38:07
+{"id":4,"status":200,"result":true}
+20.03.2025, 20:38:41
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:38:41
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 20:38:41
+{"id":4,"status":200,"result":{"result":true}}
+20.03.2025, 20:39:01
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:39:01
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 20:39:01
+{"id":4,"status":200,"result":{"result":true}}
+20.03.2025, 20:39:29
+{"id":1,"req":{"code":"        function injection(data) {\n  return Buffer.from(data, 'base64').toString('utf-8');\n  // return btoa(data); // для проверки в браузере\n};","id":"4"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"187","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:39:29
+{"id":3,"file":"./tests/4.js"}
+20.03.2025, 20:39:29
+{"id":5,"status":400,"message":"Buffer is not defined"}
+20.03.2025, 20:39:58
+{"id":1,"req":{"code":"        function injection(data) {\n  return btoa(data); // для проверки в браузере\n};","id":"4"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"127","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:39:58
+{"id":3,"file":"./tests/4.js"}
+20.03.2025, 20:39:58
+{"id":5,"status":400,"message":"btoa is not defined"}
+20.03.2025, 20:43:36
+{"id":1,"req":{"code":"        function injection(data) {\n  return btoa(data); // для проверки в браузере\n};","id":"4"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"127","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:43:36
+{"id":3,"file":"./tests/4.js"}
+20.03.2025, 20:43:36
+{"id":4,"status":200,"result":false}
+20.03.2025, 20:45:24
+{"id":1,"req":{"code":"        function injection(data) {\n  return btoa(data); // для проверки в браузере\n};","id":"4"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"127","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 20:45:24
+{"id":3,"file":"./tests/4.js"}
+20.03.2025, 20:45:24
+{"id":5,"status":400,"message":"require is not defined"}
+20.03.2025, 21:13:58
+{"id":1,"req":{"code":" function injection(data) {\n   return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"92","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:13:58
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 21:13:58
+{"id":4,"status":200,"result":{"result":true}}
+20.03.2025, 21:14:10
+{"id":1,"req":{"code":"function injection(data) {\n  return Buffer.from(data, 'base64').toString('utf-8');\n  // return btoa(data); // для проверки в браузере\n};","id":"4"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"179","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:14:10
+{"id":3,"file":"./tests/4.js"}
+20.03.2025, 21:14:10
+{"id":5,"status":400,"message":"Buffer is not defined"}
+20.03.2025, 21:14:17
+{"id":1,"req":{"code":"function injection(data) {\n  return btoa(data); // для проверки в браузере\n};","id":"4"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"119","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:14:17
+{"id":3,"file":"./tests/4.js"}
+20.03.2025, 21:14:17
+{"id":4,"status":200,"result":{"result":false,"expected":"1234567890","received":"TVRJek5EVTJOemc1TU==PQ=="}}
+20.03.2025, 21:15:55
+{"id":1,"req":{"code":"function injection(data) {\n  return btoa(data); // для проверки в браузере\n};","id":"4"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"119","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:15:55
+{"id":3,"file":"./tests/4.js"}
+20.03.2025, 21:15:55
+{"id":5,"status":400,"message":"Unsupported encoding: binary"}
+20.03.2025, 21:15:58
+{"id":1,"req":{"code":"function injection(data) {\n  return Buffer.from(data, 'base64').toString('utf-8');\n  // return btoa(data); // для проверки в браузере\n};","id":"4"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"179","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:15:58
+{"id":3,"file":"./tests/4.js"}
+20.03.2025, 21:15:58
+{"id":5,"status":400,"message":"TextDecoder is not defined"}
+20.03.2025, 21:19:59
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:19:59
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 21:19:59
+{"id":5,"status":400,"message":"require is not defined"}
+20.03.2025, 21:20:12
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:20:12
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 21:20:12
+{"id":5,"status":400,"message":"require is not a function"}
+20.03.2025, 21:21:33
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:21:33
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 21:21:33
+{"id":5,"status":400,"message":"require is not a function"}
+20.03.2025, 21:22:14
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:22:14
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 21:22:14
+{"id":5,"status":400,"message":"require is not a function"}
+20.03.2025, 21:22:39
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:22:39
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 21:22:39
+{"id":5,"status":400,"message":"require is not a function"}
+20.03.2025, 21:23:19
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:23:19
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 21:23:19
+{"id":5,"status":400,"message":"require is not a function"}
+20.03.2025, 21:24:54
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 21:24:54
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:24:54
+{"id":5,"status":400,"message":"require is not a function"}
+20.03.2025, 21:25:23
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:25:23
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 21:25:23
+{"id":5,"status":400,"message":"(moduleName) => {\n        // Список разрешенных модулей\n        const allowedModules = ['crypto', 'path', 'url'...<omitted>... } could not be cloned."}
+20.03.2025, 21:25:41
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:25:41
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 21:25:41
+{"id":5,"status":400,"message":"(moduleName) => {\n        // Список разрешенных модулей\n        const allowedModules = ['./utils/testAll'];\n\n  ...<omitted>... } could not be cloned."}
+20.03.2025, 21:29:56
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:29:56
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 21:29:56
+{"id":5,"status":400,"message":"global is not defined"}
+20.03.2025, 21:30:59
+{"id":1,"req":{"code":"function injection(data) {\n  return String.fromCharCode(...data);\n};","id":"3"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"90","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:30:59
+{"id":3,"file":"./tests/3.js"}
+20.03.2025, 21:30:59
+{"id":4,"status":200,"result":{"result":true}}
+20.03.2025, 21:31:44
+{"id":1,"req":{"code":"function injection(data) {\n  return btoa(data); // для проверки в браузере\n};","id":"4"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"119","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:31:44
+{"id":3,"file":"./tests/4.js"}
+20.03.2025, 21:31:44
+{"id":4,"status":200,"result":{"result":false,"expected":"1234567890","received":"TVRJek5EVTJOemc1TU==PQ=="}}
+20.03.2025, 21:31:50
+{"id":1,"req":{"code":"function injection(data) {\n  return btoa(data); // для проверки в браузере\n};","id":"4"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"119","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:31:50
+{"id":3,"file":"./tests/4.js"}
+20.03.2025, 21:31:50
+{"id":4,"status":200,"result":{"result":false,"expected":"1234567890","received":"TVRJek5EVTJOemc1TU==PQ=="}}
+20.03.2025, 21:33:18
+{"id":1,"req":{"code":"function injection(data) {\n  return atob(data); // для проверки в браузере\n};","id":"4"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"119","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:33:18
+{"id":3,"file":"./tests/4.js"}
+20.03.2025, 21:33:18
+{"id":4,"status":200,"result":{"result":true}}
+20.03.2025, 21:34:02
+{"id":1,"req":{"code":"function injection(data) {\n  return data.filter(word => word === word.split('').reverse().join(''));\n};","id":"5"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"125","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:34:02
+{"id":3,"file":"./tests/5.js"}
+20.03.2025, 21:34:02
+{"id":4,"status":200,"result":{"result":true}}
+20.03.2025, 21:34:26
+{"id":1,"req":{"code":"function injection(data) {\n  return data.reduce((acc, word) => {\n    const length = word.length;\n    acc[length] = acc[length] || [];\n    acc[length].push(word);\n    return acc;\n  }, {});\n};","id":"6"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"217","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:34:26
+{"id":3,"file":"./tests/6.js"}
+20.03.2025, 21:34:26
+{"id":4,"status":200,"result":true}
+20.03.2025, 21:34:43
+{"id":1,"req":{"code":"function injection(data) {\n  return data.reduce((acc, word) => {\n    const length = word.length;\n    acc[length] = acc[length] || [];\n    acc[length].push(word);\n    return acc;\n  }, {});\n};","id":"6"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"217","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:34:43
+{"id":3,"file":"./tests/6.js"}
+20.03.2025, 21:34:43
+{"id":4,"status":200,"result":{"result":true}}
+20.03.2025, 21:35:09
+{"id":1,"req":{"code":"function injection(data) {\n  return Object.entries(data)\n    .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)\n    .join('&');\n};","id":"7"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"165","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:35:09
+{"id":3,"file":"./tests/7.js"}
+20.03.2025, 21:35:09
+{"id":4,"status":200,"result":{"result":true}}
+20.03.2025, 21:35:13
+{"id":1,"req":{"code":"function injection(data) {\n  return Object.entries(data)\n    .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)\n    .join('&1');\n};","id":"7"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"166","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:35:13
+{"id":3,"file":"./tests/7.js"}
+20.03.2025, 21:35:13
+{"id":4,"status":200,"result":{"result":false,"expected":"q=javascript&lang=en&results=100","received":"q=javascript&1lang=en&1results=100"}}
+20.03.2025, 21:35:18
+{"id":1,"req":{"code":"function injection(data) {\n  return Object.entries(data)\n    .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)\n    .join('&');\n};","id":"7"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"165","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:35:18
+{"id":3,"file":"./tests/7.js"}
+20.03.2025, 21:35:18
+{"id":4,"status":200,"result":{"result":true}}
+20.03.2025, 21:37:31
+{"id":1,"req":{"code":"function injection(data) {\n  return data.split('').reduce((acc, char) => {\n    acc[char] = (acc[char] || 0) + 1;\n    return acc;\n  }, {});\n};","id":"8"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"166","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:37:31
+{"id":3,"file":"./tests/8.js"}
+20.03.2025, 21:37:31
+{"id":4,"status":200,"result":{"result":true}}
+20.03.2025, 21:37:41
+{"id":1,"req":{"code":"function injection(data) {\n  const date = new Date(data);\n  return {\n    year: date.getFullYear(),\n    month: date.getMonth() + 1,\n    day: date.getDate(),\n    hours: date.getHours(),\n    minutes: date.getMinutes(),\n    seconds: date.getSeconds()\n  };\n};","id":"9"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"284","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:37:41
+{"id":3,"file":"./tests/9.js"}
+20.03.2025, 21:37:41
+{"id":4,"status":200,"result":{"result":false,"expected":{"year":2020,"month":1,"day":1,"hours":0,"minutes":0,"seconds":0},"received":{"year":2020,"month":1,"day":1,"hours":3,"minutes":0,"seconds":0}}}
+20.03.2025, 21:39:19
+{"id":1,"req":{"code":"function injection(data) {\n  const date = new Date(data);\n  return {\n    year: date.getFullYear(),\n    month: date.getMonth() + 1,\n    day: date.getDate(),\n    hours: date.getHours(),\n    minutes: date.getMinutes(),\n    seconds: date.getSeconds()\n  };\n};","id":"9"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"284","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:39:19
+{"id":3,"file":"./tests/9.js"}
+20.03.2025, 21:39:19
+{"id":4,"status":200,"result":{"result":false,"expected":{"year":2021,"month":1,"day":1,"hours":0,"minutes":0,"seconds":0},"received":{"year":2021,"month":1,"day":1,"hours":3,"minutes":0,"seconds":0}}}
+20.03.2025, 21:39:32
+{"id":1,"req":{"code":"function injection(data) {\n  const date = new Date(data);\n  return {\n    year: date.getFullYear(),\n    month: date.getMonth() + 1,\n    day: date.getDate(),\n    hours: date.getHours(),\n    minutes: date.getMinutes(),\n    seconds: date.getSeconds()\n  };\n};","id":"9"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"284","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:39:32
+{"id":3,"file":"./tests/9.js"}
+20.03.2025, 21:39:32
+{"id":4,"status":200,"result":{"result":false,"expected":{"year":2021,"month":10,"day":18,"hours":13,"minutes":44,"seconds":50},"received":{"year":2021,"month":10,"day":18,"hours":17,"minutes":38,"seconds":10}}}
+20.03.2025, 21:40:00
+{"id":1,"req":{"code":"function injection(data) {\n  const date = new Date(data);\n  return {\n    year: date.getFullYear(),\n    month: date.getMonth() + 1,\n    day: date.getDate(),\n    hours: date.getHours(),\n    minutes: date.getMinutes(),\n    seconds: date.getSeconds()\n  };\n};","id":"9"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"284","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:40:00
+{"id":3,"file":"./tests/9.js"}
+20.03.2025, 21:40:00
+{"id":4,"status":200,"result":{"result":false,"expected":{"year":2021,"month":10,"day":18,"hours":17,"minutes":44,"seconds":50},"received":{"year":2021,"month":10,"day":18,"hours":17,"minutes":38,"seconds":10}}}
+20.03.2025, 21:40:38
+{"id":1,"req":{"code":"function injection(data) {\n  const date = new Date(data);\n  return {\n    year: date.getFullYear(),\n    month: date.getMonth() + 1,\n    day: date.getDate(),\n    hours: date.getHours(),\n    minutes: date.getMinutes(),\n    seconds: date.getSeconds()\n  };\n};","id":"9"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"284","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:40:38
+{"id":3,"file":"./tests/9.js"}
+20.03.2025, 21:40:38
+{"id":4,"status":200,"result":{"result":true}}
+20.03.2025, 21:40:49
+{"id":1,"req":{"code":"function injection(data) {\n  return `+7 (${data.slice(0, 3)}) ${data.slice(3, 6)}-${data.slice(6, 8)}-${data.slice(8)}`;\n};","id":"10"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"146","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:40:49
+{"id":3,"file":"./tests/10.js"}
+20.03.2025, 21:40:49
+{"id":4,"status":200,"result":{"result":true}}
+20.03.2025, 21:41:02
+{"id":1,"req":{"code":"function injection(data) {\n  return data.filter(item => item.active);\n};","id":"11"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"95","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:41:02
+{"id":3,"file":"./tests/11.js"}
+20.03.2025, 21:41:02
+{"id":4,"status":200,"result":{"result":true}}
+20.03.2025, 21:41:14
+{"id":1,"req":{"code":"function injection(data) {\n  const toHex = (value) => {\n    const hex = value.toString(16).toUpperCase();\n    return hex.length === 1 ? '0' + hex : hex;\n  };\n\n  return `#${toHex(data.r)}${toHex(data.g)}${toHex(data.b)}`;\n};","id":"12"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"251","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:41:14
+{"id":3,"file":"./tests/12.js"}
+20.03.2025, 21:41:14
+{"id":4,"status":200,"result":{"result":true}}
+20.03.2025, 21:41:26
+{"id":1,"req":{"code":"function injection(data) {\n  return [...data].sort((a, b) => b.score - a.score);\n};","id":"13"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"106","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:41:26
+{"id":3,"file":"./tests/13.js"}
+20.03.2025, 21:41:26
+{"id":4,"status":200,"result":{"result":true}}
+20.03.2025, 21:41:37
+{"id":1,"req":{"code":"function injection(data) {\n  return data\n    .split(' ')\n    .map(word => word.charAt(0).toUpperCase())\n    .join('');\n};","id":"14"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"147","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:41:37
+{"id":3,"file":"./tests/14.js"}
+20.03.2025, 21:41:37
+{"id":4,"status":200,"result":{"result":true}}
+20.03.2025, 21:41:48
+{"id":1,"req":{"code":"function injection(data) {\n  return data.split(/\\s+/).filter(word => word.length > 0).length;\n};","id":"15"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"120","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:41:48
+{"id":3,"file":"./tests/15.js"}
+20.03.2025, 21:41:48
+{"id":4,"status":200,"result":{"result":true}}
+20.03.2025, 21:47:30
+{"id":1,"req":{"code":"        function injection(data) {\n  return btoa(data); // для проверки в браузере\n};","id":"4"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"127","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:47:30
+{"id":3,"file":"./tests/4.js"}
+20.03.2025, 21:47:30
+{"id":4,"status":200,"result":{"result":false,"expected":"1234567890","received":"TVRJek5EVTJOemc1TU==PQ=="}}
+20.03.2025, 21:47:55
+{"id":1,"req":{"code":"        function injection(data) {\n  return btoa(data); // для проверки в браузере\n};","id":"4"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"127","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:47:55
+{"id":3,"file":"./tests/4.js"}
+20.03.2025, 21:47:55
+{"id":4,"status":200,"result":{"result":false,"expected":"1234567890","received":"TVRJek5EVTJOemc1TU==PQ=="}}
+20.03.2025, 21:48:29
+{"id":1,"req":{"code":"        function injection(data) {\n  return btoa(data); // для проверки в браузере\n};","id":"4"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"127","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:48:29
+{"id":3,"file":"./tests/4.js"}
+20.03.2025, 21:48:29
+{"id":5,"status":400,"message":"testAll is not defined"}
+20.03.2025, 21:48:34
+{"id":1,"req":{"code":"        function injection(data) {\n  return atob(data); // для проверки в браузере\n};","id":"4"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"127","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:48:34
+{"id":3,"file":"./tests/4.js"}
+20.03.2025, 21:48:34
+{"id":5,"status":400,"message":"testAll is not defined"}
+20.03.2025, 21:48:49
+{"id":1,"req":{"code":"        function injection(data) {\n  return atob(data); // для проверки в браузере\n};","id":"4"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"127","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:48:49
+{"id":3,"file":"./tests/4.js"}
+20.03.2025, 21:48:49
+{"id":4,"status":200,"result":{"result":true}}
+20.03.2025, 21:48:55
+{"id":1,"req":{"code":"        function injection(data) {\n  return btoa(data); // для проверки в браузере\n};","id":"4"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"127","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"keep-alive"}}
+20.03.2025, 21:48:55
+{"id":3,"file":"./tests/4.js"}
+20.03.2025, 21:48:55
+{"id":4,"status":200,"result":{"result":false,"expected":"1234567890","received":"TVRJek5EVTJOemc1TU==PQ=="}}
