@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import './successStep.css'
 
@@ -20,11 +20,11 @@ import './successStep.css'
 
 const SuccessStep = ({ onClose }) => {
     return (
-        <div class="overlay">
-            <div class="popup">
+        <div className="overlay">
+            <div className="popup">
                 <h1>Код подобран верно!</h1>
                 <p>Ты на шаг ближе...</p>
-                <button class='popupSuccStep specialSuccButton' onClick={onClose}>ок</button>
+                <button className='popupSuccStep specialSuccButton' onClick={onClose}>ок</button>
             </div>
         </div>
     );

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import './faildFinish.css'
 
@@ -20,11 +20,11 @@ import './faildFinish.css'
 
 const FaildFinish = () => {
     return (
-        <div class="overlay">
-            <div class="popup">
+        <div className="overlay">
+            <div className="popup">
                 <h1>Время вышло!</h1>
                 <p>Злоумышленники оказались хитрее...</p>
-                <button class='buttonF'>:(</button>
+                <button className='buttonF'>:(</button>
             </div>
         </div>
     );

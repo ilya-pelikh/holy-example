@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom'
 
 import './successFinish.css'
@@ -21,13 +21,12 @@ import './successFinish.css'
 
 const SuccessFinish = () => {
     const navigate = useNavigate();
-    console.log('55555')
     return (
-        <div class="overlay">
-            <div class="popup">
+        <div className="overlay">
+            <div className="popup">
                 <h1>Бабушка в безопасности!</h1>
                 <p>Благодарим тебя, наш герой!</p>
-                <button class='popupSuccStep specialSuccButton' onClick={navigate('/')}>Ура!</button>
+                <button className='popupSuccStep specialSuccButton' onClick={() => navigate('/')}>Ура!</button>
             </div>
         </div>
     );

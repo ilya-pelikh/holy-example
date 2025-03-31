@@ -3,6 +3,14 @@
 //   return data.filter(word => word === word.split('').reverse().join(''));
 // };
 
+
+const compare = (data1, data2) => {
+    if (!Array.isArray(data1) || !Array.isArray(data2)) return false;
+
+    return data1.every((word, index) => word === data2[index]);
+};
+
+
 function test() {
     const data1 = ['level', 'hello', 'radar', 'world', 'madam'];
     const data2 = ['noon', 'test', 'deed', 'javascript'];

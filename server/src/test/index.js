@@ -28,7 +28,7 @@ const ACCEPTED_IDS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '
  * Выполнение теста с добавленным кодом решения пользователя с возвратом результата
  * @param {string} reqBodyCode - Код для проверки
  * @param {string} testFile - Файл с тестами
- * @returns {Promise<{ result: boolean, expected: string, received: string, wrongTestIndex: number, testsCount: number }>} - Результат проверки
+ * @returns {Promise<{ result: boolean, expected: string, received: string, wrongTestNumber: number, testsCount: number }>} - Результат проверки
  */
 const testUserSolution = async (reqBodyCode, testFile) => {
     // Создаем изолированный контекст с ограничением памяти
@@ -52,9 +52,10 @@ app.get('/tasks/suite', async (req, res) => {
     const randomSuites = ACCEPTED_IDS.sort(() => Math.random() - 0.5).slice(0, TASK_SUITES_COUNT);
 
     const files = [];
-    randomSuites.forEach((suite) => {
-        const file = fs.readFileSync(path.resolve(__dirname, `./tasks/${suite}.js`), 'utf8');
-        files.push(file);
+    randomSuites.forEach((suiteNumber) => {
+        const file = fs.readFileSync(path.resolve(__dirname, `./tasks/${suiteNumber}.js`), 'utf8');
+
+        files.push({ id: suiteNumber, code: file });
     });
 
     res.status(200).send({ suites: files });
@@ -81,7 +82,7 @@ app.post('*', async (req, res) => {
          *  result: boolean,
          *  expected: string,
          *  received: string,
-         *  wrongTestIndex: number,
+         *  wrongTestNumber: number,
          *  testsCount: number
          * }
          */
@@ -111,7 +112,7 @@ app.post('*', async (req, res) => {
                 break;
             default:
                 logger({ id: 'TE3', description: errors.TE3(), catchedError: error, status: 400 });
-                res.status(400).json({ error: `Ошибка № TE3 - обратитесь к сопровождающему стенда` }).send();
+                res.status(400).json({ error: `Ошибка № TE3 - обратитесь к сопровождающему стенда`, details: error.message }).send();
         }
     }
 });

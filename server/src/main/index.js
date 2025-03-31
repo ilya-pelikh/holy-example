@@ -50,17 +50,17 @@ app.post('/tasks/:id', async (req, res) => {
             res.status(200).send({
                 message: 'Попытка не удалась, попробуйте еще раз',
                 result: response.result,
-                wrongTestIndex: response.wrongTestIndex,
-                expected: response.wrongTestIndex >= (HIDDEN_TEST_COUNT - 1) ? null : response.expected,
-                received: response.wrongTestIndex >= (HIDDEN_TEST_COUNT - 1) ? null : response.received,
+                wrongTestNumber: response.wrongTestNumber,
+                expected: response.wrongTestNumber > HIDDEN_TEST_COUNT ? null : response.expected,
+                received: response.wrongTestNumber > HIDDEN_TEST_COUNT ? null : response.received,
                 testsCount: response.testsCount,
             });
         }
     } catch (error) {
-        switch (error) {
+        switch (error.errorCode) {
             case 'ME1':
                 logger({ id: 'ME1', description: errors.ME1(), status: 400 });
-                res.status(400).json({ error: 'Ошибка № ME2 - обратитесь к сопровождающему стенда' }).send();
+                res.status(400).json({ error: 'Ошибка № ME2 - обратитесь к сопровождающему стенда', details: error.details }).send();
                 break;
         }
     }

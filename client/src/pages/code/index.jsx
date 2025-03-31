@@ -17,12 +17,24 @@ import {
     StyledExitButton,
 } from './code.styled.js'
 
-const Code = () => {
-    const navigate = useNavigate();
-    const [enteredCode, setEnteredCode] = React.useState(`const injection = (prop) => {
+/**
+ * Получает список заданий
+ * @returns {Promise<{ suites: { id: string, code: string }[] }>} - Список заданий
+ */
+const fetchTasksSuite = async () => {
+    const response = await fetch('http://localhost:3001/tasks/suite');
+    const data = await response.json();
+    return data.suites;
+}
+
+const defaultCode = `const injection = (prop) => {
     // Код модуля injection, который вернет ожидаемый результат
 }
-`);
+`;
+
+const Code = () => {
+    const navigate = useNavigate();
+    const [enteredCode, setEnteredCode] = useState(defaultCode);
     const [taskSuite, setTaskSuites] = useState([]);
     const [currentTaskIndex, setCurrentTaskIndex] = useState(0);
     const [onboardingStep, setOnboardingStep] = useState(1);
@@ -30,6 +42,11 @@ const Code = () => {
     const onClickExitButton = () => {
         // Переходим в начало
         navigate('/');
+    };
+
+    const handleSuccessSubmit = () => {
+        setCurrentTaskIndex(currentTaskIndex + 1);
+        setEnteredCode(defaultCode);
     };
 
     useEffect(() => {
@@ -50,9 +67,8 @@ const Code = () => {
 
     useEffect(() => {
         const fetchSuites = async () => {
-            const response = await fetch('http://localhost:3001/tasks/suite');
-            const data = await response.json();
-            setTaskSuites(data.suites);
+            const suite = await fetchTasksSuite();
+            setTaskSuites(suite);
         };
 
         try {
@@ -62,7 +78,7 @@ const Code = () => {
         }
     }, []);
 
-    const task = taskSuite[currentTaskIndex];
+    const task = taskSuite[currentTaskIndex] || {};
 
     return (
         <StyledFullScreen>
@@ -80,13 +96,18 @@ const Code = () => {
 
             { /* Поля для кода */}
             <StyledBody>
-                <Sample task={task} onboardingStep={onboardingStep} />
+                <Sample task={task.code} onboardingStep={onboardingStep} />
                 <Editor enteredCode={enteredCode} setEnteredCode={setEnteredCode} onboardingStep={onboardingStep} />
             </StyledBody>
 
             { /* Кнопка проверки кода */}
             <StyledFooter>
-                <CheckButton taskIndex={currentTaskIndex} enteredCode={enteredCode} onboardingStep={onboardingStep} />
+                <CheckButton
+                    taskId={task.id}
+                    enteredCode={enteredCode}
+                    onboardingStep={onboardingStep}
+                    onSuccessSubmit={handleSuccessSubmit}
+                />
             </StyledFooter>
         </StyledFullScreen>
     );

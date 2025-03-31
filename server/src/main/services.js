@@ -6,7 +6,7 @@ const ACCEPT_TOKEN = 'secret_token';
  * Отправляет код на проверку
  * @param {string} code - Код для проверки
  * @param {string} id - Идентификатор задачи
- * @returns {Promise<{ result: boolean, expected: string, received: string, wrongTestIndex: number, testsCount: number }>} - Результат проверки
+ * @returns {Promise<{ result: boolean, expected: string, received: string, wrongTestNumber: number, testsCount: number }>} - Результат проверки
  */
 const submitCode = async (code, id) => {
   try {
@@ -16,7 +16,11 @@ const submitCode = async (code, id) => {
       return result;
   } catch (error) {
       console.error('[submitCode] Ошибка при отправке кода:', error);
-      throw 'ME1';
+      throw {
+        errorCode: "ME1",
+        errorMessage: error.response.data.error,
+        details: error.response.data.details
+      }
   }
 }
 

@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Axios from "axios";
 
 import { StyledCheckButton, StyledCheckButtonText, StyledCheckButtonOnboarding, StyledCheckButtonContainer } from './checkButton.styled'
 import SuccessFinish from '../status/successFinish'
 import SuccessStep from '../status/successStep'
-import FaildStep from '../status/faildStep'
+import FailedStep from '../status/failedStep'
 
 /**
  * Отправляет код на проверку
@@ -16,7 +16,7 @@ import FaildStep from '../status/faildStep'
  *   message: string,
  *   expected: string,
  *   received: string,
- *   wrongTestIndex: number,
+ *   wrongTestNumber: number,
  *   testsCount: number
  *  }
  * }}> - Результат проверки
@@ -36,15 +36,11 @@ const submitCode = async (code, id) => {
     })
 }
 
-const Timer = ({ taskIndex, enteredCode, onboardingStep }) => {
+const Timer = ({ taskId, enteredCode, onboardingStep, onSuccessSubmit }) => {
     let [currentStage, setCurrentStage] = useState(2)
     const [showSuccessStep, setShowSuccessStep] = useState(false);
-    const [showFaildStep, setShowFaildStep] = useState(false);
     const [showSuccessFinish, setShowSuccessFinish] = useState(false);
-
-    console.log('taskIndex', taskIndex)
-    console.log('enteredCode', enteredCode)
-
+    const [errorDetails, setErrorDetails] = useState(null);
 
     // Функция для перехода к следующему этапу
     function nextStage() {
@@ -66,28 +62,39 @@ const Timer = ({ taskIndex, enteredCode, onboardingStep }) => {
         document.getElementById(`stage${currentStage}`).classList.add('active');
     }
 
-    const onClick = () => submitCode(enteredCode, taskIndex + 1)
-    .then(res => {
-        if (res.data.result) {
-            setShowSuccessStep(true);
-            nextStage()
-        } else if (!res.data.result) {
-            setShowFaildStep(true);
-            console.log('Провал')
-        } else {
-            console.log('Ошибочка')
-        }
-    })
-    .catch(error => {
-        console.log('Ошибка', error)
-    });
+    const onClick = () => {
+        closeFailedStep();
+        submitCode(enteredCode, taskId)
+            .then(res => {
+                if (res.data.result) {
+                    setShowSuccessStep(true);
+                    nextStage()
+                } else if (!res.data.result) {
+                    setErrorDetails(res.data);
+                    console.log('Провал')
+                } else {
+                    console.log('Ошибочка')
+                }
+            })
+            .catch(error => {
+                console.log('[onClick] Ошибка', error)
+                if (error?.response?.data?.error) {
+                    setErrorDetails({
+                        message: error.response.data.error,
+                        details: error.response.data.details,
+                    });
+                    return;
+                }
+        });
+    }
 
     const closeSuccessStep = () => {
         setShowSuccessStep(false);
+        onSuccessSubmit();
     };
 
-    const closeFaildStep = () => {
-        setShowFaildStep(false);
+    const closeFailedStep = () => {
+        setErrorDetails(null);
     };
 
     return (
@@ -102,7 +109,7 @@ const Timer = ({ taskIndex, enteredCode, onboardingStep }) => {
                 <StyledCheckButtonText onClick={onClick}>Подобрать код</StyledCheckButtonText>
                 {/* Поп-ап */}
                 {showSuccessStep && <SuccessStep onClose={closeSuccessStep} />}
-                {showFaildStep && <FaildStep onClose={closeFaildStep} />}
+                {!!errorDetails && <FailedStep errorDetails={errorDetails} onClose={closeFailedStep} />}
                 {showSuccessFinish && <SuccessFinish />}
             </StyledCheckButton>
         </StyledCheckButtonContainer>

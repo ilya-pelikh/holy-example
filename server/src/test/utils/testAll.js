@@ -12,7 +12,7 @@ function testAll(compareArray, compareFn) {
   if (wrongTestIndex !== null) {
       resultObject.expected = compareArray[wrongTestIndex].expected;
       resultObject.received = compareArray[wrongTestIndex].result;
-      resultObject.wrongTestIndex = wrongTestIndex;
+      resultObject.wrongTestNumber = wrongTestIndex + 1;
       resultObject.testsCount = compareArray.length;
   }
   return JSON.stringify(resultObject);
