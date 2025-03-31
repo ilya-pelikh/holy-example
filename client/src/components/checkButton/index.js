@@ -6,6 +6,36 @@ import SuccessFinish from '../status/successFinish'
 import SuccessStep from '../status/successStep'
 import FaildStep from '../status/faildStep'
 
+/**
+ * Отправляет код на проверку
+ * @param {string} code - Код для проверки
+ * @param {string} id - Идентификатор задачи
+ * @returns { Promise<{
+ *  data: {
+ *   result: boolean,
+ *   message: string,
+ *   expected: string,
+ *   received: string,
+ *   wrongTestIndex: number,
+ *   testsCount: number
+ *  }
+ * }}> - Результат проверки
+ */
+const submitCode = async (code, id) => {
+    return Axios({
+        method: "POST",
+        url: `http://localhost:3001/tasks/${id}`,
+        headers: {
+            "Content-Type": "application/json",
+            "accept-token": "secret_token",
+        },
+        data: {
+            id: id,
+            code: code,
+        }
+    })
+}
+
 const Timer = ({ taskIndex, enteredCode, onboardingStep }) => {
     let [currentStage, setCurrentStage] = useState(2)
     const [showSuccessStep, setShowSuccessStep] = useState(false);
@@ -36,27 +66,20 @@ const Timer = ({ taskIndex, enteredCode, onboardingStep }) => {
         document.getElementById(`stage${currentStage}`).classList.add('active');
     }
 
-    const onClick = () => Axios({
-        method: "POST",
-        url: `http://localhost:3001/tasks/${taskIndex + 1}`,
-        headers: {
-            "Content-Type": "application/json",
-            "accept-token": "secret_token",
-        },
-        data: {
-            id: taskIndex + 1,
-            code: enteredCode,
-        }
-    }).then(res => {
-        if (res.data === 'Этап успешно завершён') {
+    const onClick = () => submitCode(enteredCode, taskIndex + 1)
+    .then(res => {
+        if (res.data.result) {
             setShowSuccessStep(true);
             nextStage()
-        } else if (res.data === 'Попытка не удалась, попробуйте еще раз') {
+        } else if (!res.data.result) {
             setShowFaildStep(true);
             console.log('Провал')
         } else {
             console.log('Ошибочка')
         }
+    })
+    .catch(error => {
+        console.log('Ошибка', error)
     });
 
     const closeSuccessStep = () => {
