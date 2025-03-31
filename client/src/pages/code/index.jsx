@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios';
 
 import Timer from '../../components/timer/index.js'
 import Steps from '../../components/steps/index.jsx'
@@ -16,15 +17,13 @@ import {
     StyledFullScreen,
     StyledExitButton,
 } from './code.styled.js'
-
 /**
  * Получает список заданий
  * @returns {Promise<{ suites: { id: string, code: string }[] }>} - Список заданий
  */
 const fetchTasksSuite = async () => {
-    const response = await fetch('http://localhost:3001/tasks/suite');
-    const data = await response.json();
-    return data.suites;
+    const response = await axios.get('http://localhost:3001/tasks/suite');
+    return response.data.suites;
 }
 
 const defaultCode = `const injection = (prop) => {
