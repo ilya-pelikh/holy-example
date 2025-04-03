@@ -1,0 +1,6 @@
+23.03.2025, 21:58:03
+{"id":1,"body":{"code":"const injection = () => {\n  console.log('asd');\n  return [1, 2];\n}"},"params":{"id":"1"}}
+23.03.2025, 21:58:03
+{"id":2,"postData":["http://localhost:3002/",{"code":"const injection = () => {\n  console.log('asd');\n  return [1, 2];\n}","id":"1"},{"headers":{"Accept-Token":"secret_token"}}]}
+23.03.2025, 21:58:03
+{"id":6,"status":400,"err":{"error":"Unexpected token 'const' [<isolated-vm>:4:2]"}}

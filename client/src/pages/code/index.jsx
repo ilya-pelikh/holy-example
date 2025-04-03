@@ -38,9 +38,17 @@ const Code = () => {
     const [currentTaskIndex, setCurrentTaskIndex] = useState(0);
     const [onboardingStep, setOnboardingStep] = useState(1);
 
-    const onClickExitButton = () => {
-        // Переходим в начало
-        navigate('/');
+    const onClickExitButton = async () => {
+        try {
+            // Reset the timer before navigation
+            await axios.post('http://localhost:3001/timer/reset');
+            // Navigate to home page
+            navigate('/');
+        } catch (error) {
+            console.error('Error resetting timer:', error);
+            // Still navigate even if timer reset fails
+            navigate('/');
+        }
     };
 
     const handleSuccessSubmit = () => {
