@@ -12,11 +12,52 @@ const port = 3001;
 const app = express();
 const logger = createLogger('main');
 
+const timerState = {
+    startTime: null,
+    isActive: false
+};
+
 app.use(cors());
 app.use(morgan('combined'));
 app.use(express.json());
 
 const HIDDEN_TEST_COUNT = 3;
+
+app.post('/timer/start', (req, res) => {
+    if (timerState.isActive) {
+        return res.status(400).json({ error: 'Timer is already running' });
+    }
+
+    timerState.startTime = Date.now();
+    timerState.isActive = true;
+    res.status(200).json({ startTime: timerState.startTime });
+});
+
+app.post('/timer/reset', (req, res) => {
+    timerState.startTime = null;
+    timerState.isActive = false;
+    res.status(200).json({ message: 'Timer reset successfully' });
+});
+
+app.get('/timer/state', (req, res) => {
+    if (!timerState.isActive) {
+        return res.status(200).json({ isActive: false });
+    }
+
+    const elapsedTime = Date.now() - timerState.startTime;
+    const remainingTime = Math.max(0, 600000 - elapsedTime);
+
+    if (remainingTime === 0) {
+        timerState.isActive = false;
+        timerState.startTime = null;
+    }
+
+    res.status(200).json({
+        isActive: timerState.isActive,
+        remainingTime,
+        startTime: timerState.startTime
+    });
+});
 
 app.get('/tasks/suite', async (req, res) => {
     try {

@@ -1,27 +1,54 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 import { StyledTimer, StyledTimerContainer, StyledTimerOnboarding } from './timer.styled'
 
 const Timer = ({ onboardingStep }) => {
-    // 10 minutes in seconds
     const [timeInSeconds, setTimeInSeconds] = useState(600);
+    const [isActive, setIsActive] = useState(false);
 
     useEffect(() => {
         if (onboardingStep < 6) return;
 
-        // Stop the timer when it reaches 0
+        if (onboardingStep === 6 && !isActive) {
+            axios.post('http://localhost:3001/timer/start')
+                .then(() => setIsActive(true))
+                .catch(error => {
+                    console.error('Error starting timer:', error);
+                    // If timer is already running, just set isActive to true
+                    if (error.response?.status === 400) {
+                        setIsActive(true);
+                    }
+                });
+        }
+
         if (timeInSeconds <= 0) return;
 
-        // Set up the interval to decrement the timer every second
-        const timerInterval = setInterval(() => {
-            setTimeInSeconds((prevTime) => prevTime - 1);
+        const timerInterval = setInterval(async () => {
+            try {
+                const response = await axios.get('http://localhost:3001/timer/state');
+                const { remainingTime, isActive: serverIsActive } = response.data;
+
+                if (!serverIsActive) {
+                    setIsActive(false);
+                    setTimeInSeconds(0);
+                    clearInterval(timerInterval);
+                    return;
+                }
+
+                setTimeInSeconds(Math.floor(remainingTime / 1000));
+            } catch (error) {
+                console.error('Error fetching timer state:', error);
+
+                setIsActive(false);
+                setTimeInSeconds(0);
+                clearInterval(timerInterval);
+            }
         }, 1000);
 
-        // Clean up the interval when the component unmounts or the timer reaches 0
         return () => clearInterval(timerInterval);
-    }, [timeInSeconds, onboardingStep]);
+    }, [onboardingStep, isActive]);
 
-    // Convert seconds into minutes and seconds
     const minutes = Math.floor(timeInSeconds / 60);
     const seconds = timeInSeconds % 60;
 

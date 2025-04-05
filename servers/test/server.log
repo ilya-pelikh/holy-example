@@ -1,0 +1,6 @@
+23.03.2025, 21:58:03
+{"id":1,"req":{"code":"const injection = () => {\n  console.log('asd');\n  return [1, 2];\n}","id":"1"},"headers":{"accept":"application/json, text/plain, */*","content-type":"application/json","accept-token":"secret_token","user-agent":"axios/1.8.3","content-length":"89","accept-encoding":"gzip, compress, deflate, br","host":"localhost:3001","connection":"close"}}
+23.03.2025, 21:58:03
+{"id":3,"file":"./tests/1.js"}
+23.03.2025, 21:58:03
+{"id":5,"status":400,"message":"Unexpected token 'const' [<isolated-vm>:4:2]"}
