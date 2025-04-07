@@ -39,15 +39,19 @@ const Code = () => {
     const [onboardingStep, setOnboardingStep] = useState(1);
 
     const onClickExitButton = async () => {
-        try {
-            // Reset the timer before navigation
-            await axios.post('http://localhost:3001/timer/reset');
-            // Navigate to home page
-            navigate('/');
-        } catch (error) {
-            console.error('Error resetting timer:', error);
-            // Still navigate even if timer reset fails
-            navigate('/');
+        let insertedPassword = prompt("Введи пароль");
+
+        if (insertedPassword === 'flower') {
+            try {
+                // Reset the timer before navigation
+                await axios.post('http://localhost:3001/timer/reset');
+                // Navigate to home page
+                navigate('/');
+            } catch (error) {
+                console.error('Error resetting timer:', error);
+                // Still navigate even if timer reset fails
+                navigate('/');
+            }
         }
     };
 

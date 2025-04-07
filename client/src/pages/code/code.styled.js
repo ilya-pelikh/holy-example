@@ -4,7 +4,7 @@ import { ReactComponent as ExitIcon } from '../../assest/exit.svg';
 
 export const StyledFullScreen = styled.div`
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     align-items: center;
 
     display: flex;
@@ -16,7 +16,6 @@ export const StyledFullScreen = styled.div`
 export const StyledHeader = styled.div`
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
 
     width: 83vw;
     margin: 20px 0;

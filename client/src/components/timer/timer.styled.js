@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledTimerContainer = styled.div`
   position: relative;
+  margin-right: 3vw;
 
   z-index: ${(props) => (props.onboardingStep === 2 ? 1 : 'auto')};
 `

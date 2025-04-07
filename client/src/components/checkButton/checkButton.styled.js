@@ -14,12 +14,16 @@ export const StyledCheckButton = styled.div`
     width: 30vw;
 
     margin-top: 8vh;
+    padding: 10px 20px 0 20px;
 
-    color: #FAF74C;
     background-color: #082B0B;
     border: 3px solid #56FF71;
 
     cursor: pointer;
+
+    &:hover {
+        box-shadow: 0 0 20px 5px rgba(255, 223, 186, 0.4);
+    }
 `
 
 export const StyledCheckButtonText = styled.button`
@@ -27,6 +31,14 @@ export const StyledCheckButtonText = styled.button`
     border: none;
     outline: none;
     background: transparent !important;
+
+    font-size: 16px;
+    cursor: pointer;
+    color: #FAF74C;
+    border: none;
+    border-radius: 5px;
+
+    font-family: 'Minecraftia', arial;
 `
 
 export const StyledCheckButtonOnboarding = styled.div`

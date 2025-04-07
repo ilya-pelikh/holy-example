@@ -26,7 +26,6 @@ const SuccessFinish = () => {
             <div className="popup">
                 <h1>Бабушка в безопасности!</h1>
                 <p>Благодарим тебя, наш герой!</p>
-                <button className='popupSuccStep specialSuccButton' onClick={() => navigate('/')}>Ура!</button>
             </div>
         </div>
     );

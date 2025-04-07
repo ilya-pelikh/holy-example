@@ -36,7 +36,7 @@ const submitCode = async (code, id) => {
     })
 }
 
-const Timer = ({ taskId, enteredCode, onboardingStep, onSuccessSubmit }) => {
+const CheckButton = ({ taskId, enteredCode, onboardingStep, onSuccessSubmit }) => {
     let [currentStage, setCurrentStage] = useState(2)
     const [showSuccessStep, setShowSuccessStep] = useState(false);
     const [showSuccessFinish, setShowSuccessFinish] = useState(false);
@@ -55,6 +55,7 @@ const Timer = ({ taskId, enteredCode, onboardingStep, onSuccessSubmit }) => {
         console.log(`stage${currentStage}`, 8888)
 
         if (currentStage >= 5) {
+            setShowSuccessStep(false)
             setShowSuccessFinish(true)
         }
 
@@ -85,7 +86,7 @@ const Timer = ({ taskId, enteredCode, onboardingStep, onSuccessSubmit }) => {
                     });
                     return;
                 }
-        });
+            });
     }
 
     const closeSuccessStep = () => {
@@ -116,4 +117,4 @@ const Timer = ({ taskId, enteredCode, onboardingStep, onSuccessSubmit }) => {
     );
 }
 
-export default Timer;
+export default CheckButton;
