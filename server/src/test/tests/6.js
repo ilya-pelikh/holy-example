@@ -1,6 +1,6 @@
 // Группировка по длине
-// function injection(data) {
-//   return data.reduce((acc, word) => {
+// function injection(prop) {
+//   return prop.reduce((acc, word) => {
 //     const length = word.length;
 //     acc[length] = acc[length] || [];
 //     acc[length].push(word);

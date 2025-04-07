@@ -1,6 +1,6 @@
 // Палиндромный фильтр
-// function injection(data) {
-//   return data.filter(word => word === word.split('').reverse().join(''));
+// function injection(prop) {
+//   return prop.filter(word => word === word.split('').reverse().join(''));
 // };
 
 

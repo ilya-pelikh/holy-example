@@ -1,5 +1,5 @@
-// function injection(data) {
-//   return String.fromCharCode(...data);
+// function injection(prop) {
+//   return String.fromCharCode(...prop);
 // };
 
 const compare = (data1, data2) => {

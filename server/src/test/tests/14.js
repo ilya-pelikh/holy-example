@@ -1,6 +1,6 @@
 // Генерация инициалов
-// function injection(data) {
-//   return data
+// function injection(prop) {
+//   return prop
 //     .split(' ')
 //     .map(word => word.charAt(0).toUpperCase())
 //     .join('');

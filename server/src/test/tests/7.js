@@ -1,6 +1,6 @@
 // Преобразование объекта в URL-параметры
-// function injection(data) {
-//   return Object.entries(data)
+// function injection(prop) {
+//   return Object.entries(prop)
 //     .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
 //     .join('&');
 // };

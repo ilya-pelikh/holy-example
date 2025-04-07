@@ -1,6 +1,5 @@
-// function injection(data) {
-//   return Buffer.from(data, 'base64').toString('utf-8');
-//   // return atob(data); // для проверки в браузере
+// function injection(prop) {
+//   // return atob(prop); // для проверки в браузере
 // };
 
 function btoa(str) {
@@ -38,7 +37,7 @@ function atob(str) {
         throw new Error("'atob' failed: The string to be decoded is not correctly encoded.");
     }
 
-    for (let bc = 0, bs = 0, buffer, i = 0; (buffer = str.charAt(i++)); ) {
+    for (let bc = 0, bs = 0, buffer, i = 0; (buffer = str.charAt(i++));) {
         const idx = chars.indexOf(buffer);
         if (idx === -1) continue;
 

@@ -1,6 +1,6 @@
 // Форматирование телефонного номера
-// function injection(data) {
-//   return `+7 (${data.slice(0, 3)}) ${data.slice(3, 6)}-${data.slice(6, 8)}-${data.slice(8)}`;
+// function injection(prop) {
+//   return `+7 (${prop.slice(0, 3)}) ${prop.slice(3, 6)}-${prop.slice(6, 8)}-${prop.slice(8)}`;
 // };
 
 const compare = (data1, data2) => {

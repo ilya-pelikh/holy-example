@@ -1,6 +1,6 @@
 // Преобразование временной метки
-// function injection(data) {
-//   const date = new Date(data);
+// function injection(prop) {
+//   const date = new Date(prop);
 //   return {
 //     year: date.getFullYear(),
 //     month: date.getMonth() + 1,

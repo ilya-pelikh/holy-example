@@ -1,7 +1,7 @@
 /**
-  const data = '1 + 2';
-  // result === '1 + 2 + 3';
-  Данный пример прибавляет к строке " + 3
+    const injection = (prop) => {
+        return prop + ' + 3'
+    }
  */
 
 const compare = (data1, data2) => {

@@ -1,6 +1,6 @@
 // Подсчет частоты символов
-// function injection(data) {
-//   return data.split('').reduce((acc, char) => {
+// function injection(prop) {
+//   return prop.split('').reduce((acc, char) => {
 //     acc[char] = (acc[char] || 0) + 1;
 //     return acc;
 //   }, {});

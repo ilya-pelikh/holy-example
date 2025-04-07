@@ -1,11 +1,11 @@
 // Преобразование RGB в HEX
-// function injection(data) {
+// function injection(prop) {
 //   const toHex = (value) => {
 //     const hex = value.toString(16).toUpperCase();
 //     return hex.length === 1 ? '0' + hex : hex;
 //   };
-//
-//   return `#${toHex(data.r)}${toHex(data.g)}${toHex(data.b)}`;
+
+//   return `#${toHex(prop.r)}${toHex(prop.g)}${toHex(prop.b)}`;
 // };
 
 const compare = (data1, data2) => {

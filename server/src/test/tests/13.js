@@ -1,6 +1,6 @@
 // Сортировка массива объектов
 // function injection(data) {
-//   return [...data].sort((a, b) => b.score - a.score);
+//   return [...prop].sort((a, b) => b.score - a.score);
 // };
 
 const compare = (data1, data2) => {
